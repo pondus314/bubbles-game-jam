@@ -1,11 +1,321 @@
-[gd_scene format=3 uid="uid://cyxmumgfqvxrt"]
+[gd_scene load_steps=4 format=3 uid="uid://5e0xeagrb3nc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0x4q4"]
+region = Rect2(840, 350, 70, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p23r2"]
+region = Rect2(840, 280, 70, 70)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_s2uu7"]
 
 [node name="GameManager" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 768.0
-offset_bottom = 432.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="GUI" type="CanvasLayer" parent="."]
+
+[node name="BackgroundColor" type="ColorRect" parent="GUI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0.545098, 0.462745, 1)
+
+[node name="Menu" type="Control" parent="GUI"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GUI/Menu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="GameName" type="CenterContainer" parent="GUI/Menu/VBoxContainer"]
+custom_minimum_size = Vector2(0, 500)
+layout_mode = 2
+
+[node name="Control" type="Control" parent="GUI/Menu/VBoxContainer/GameName"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="GUI/Menu/VBoxContainer/GameName/Control"]
+custom_minimum_size = Vector2(1600, 0)
+layout_mode = 2
+offset_left = -800.0
+offset_top = -129.0
+offset_right = 800.0
+offset_bottom = 127.924
+rotation = -0.00523599
+pivot_offset = Vector2(800, 128)
+expand_mode = 5
+stretch_mode = 5
+
+[node name="InfoLabel" type="Label" parent="GUI/Menu/VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(0, 400)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 75
+text = "Game name goes here"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GUI/Menu/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 20
+
+[node name="PlayButtonHolder" type="Control" parent="GUI/Menu/VBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(650, 145)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="GUI/Menu/VBoxContainer/VBoxContainer/PlayButtonHolder"]
+modulate = Color(0.784314, 0.784314, 0.784314, 1)
+layout_mode = 0
+offset_right = 650.0
+offset_bottom = 145.0
+expand_mode = 1
+
+[node name="Button" type="Button" parent="GUI/Menu/VBoxContainer/VBoxContainer/PlayButtonHolder"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.117647, 0.117647, 0.117647, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+text = "Play Game"
+flat = true
+icon_alignment = 1
+
+[node name="OptionsButtonHolder" type="Control" parent="GUI/Menu/VBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(650, 145)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="GUI/Menu/VBoxContainer/VBoxContainer/OptionsButtonHolder"]
+modulate = Color(0.784314, 0.784314, 0.784314, 1)
+layout_mode = 0
+offset_right = 650.0
+offset_bottom = 145.0
+expand_mode = 1
+
+[node name="Button" type="Button" parent="GUI/Menu/VBoxContainer/VBoxContainer/OptionsButtonHolder"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.117647, 0.117647, 0.117647, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+action_mode = 0
+text = "Options
+"
+flat = true
+icon_alignment = 1
+
+[node name="QuitButtonHolder" type="Control" parent="GUI/Menu/VBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(650, 145)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="GUI/Menu/VBoxContainer/VBoxContainer/QuitButtonHolder"]
+modulate = Color(0.784314, 0.784314, 0.784314, 1)
+layout_mode = 0
+offset_right = 650.0
+offset_bottom = 145.0
+expand_mode = 1
+
+[node name="Button" type="Button" parent="GUI/Menu/VBoxContainer/VBoxContainer/QuitButtonHolder"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.117647, 0.117647, 0.117647, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+text = "Exit Game"
+flat = true
+icon_alignment = 1
+
+[node name="OptionsMenu" type="Control" parent="GUI"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="LevelSelect" type="Control" parent="GUI"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GUI/LevelSelect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -417.5
+offset_top = -274.5
+offset_right = 417.5
+offset_bottom = 274.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 100
+
+[node name="LevelSelectLabel" type="Label" parent="GUI/LevelSelect/VBoxContainer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 75
+text = "Select the level"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="GUI/LevelSelect/VBoxContainer"]
+layout_mode = 2
+
+[node name="LevelButtons" type="GridContainer" parent="GUI/LevelSelect/VBoxContainer/CenterContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/h_separation = 40
+theme_override_constants/v_separation = 40
+columns = 3
+
+[node name="QuitLevelSelectButton" type="CenterContainer" parent="GUI/LevelSelect/VBoxContainer"]
+custom_minimum_size = Vector2(650, 145)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="GUI/LevelSelect/VBoxContainer/QuitLevelSelectButton"]
+modulate = Color(0.784314, 0.784314, 0.784314, 1)
+layout_mode = 2
+
+[node name="Button" type="Button" parent="GUI/LevelSelect/VBoxContainer/QuitLevelSelectButton"]
+layout_mode = 2
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.117647, 0.117647, 0.117647, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+text = "Back to Main Menu"
+flat = true
+icon_alignment = 1
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="ClickPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="HUD"]
+custom_minimum_size = Vector2(600, 120)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 600.0
+offset_bottom = 120.0
+size_flags_horizontal = 2
+size_flags_vertical = 2
+
+[node name="PopCounter" type="HBoxContainer" parent="HUD/Control"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 40.0
+offset_top = -40.0
+offset_right = 206.0
+offset_bottom = 73.0
+grow_vertical = 2
+
+[node name="TextureRect2" type="TextureRect" parent="HUD/Control/PopCounter"]
+layout_mode = 2
+size_flags_vertical = 4
+texture = SubResource("AtlasTexture_0x4q4")
+
+[node name="TextureRect" type="TextureRect" parent="HUD/Control/PopCounter/TextureRect2"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.007
+anchor_right = 0.5
+anchor_bottom = 0.007
+offset_left = -32.0
+offset_top = -18.49
+offset_right = 33.0
+offset_bottom = 46.51
+grow_horizontal = 2
+texture = SubResource("AtlasTexture_p23r2")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="ScoreLabel" type="Label" parent="HUD/Control/PopCounter"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 80
+text = "40"
+
+[node name="Game" type="Control" parent="."]
+process_mode = 1
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BlurLayer" type="CanvasLayer" parent="."]
+layer = 0
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="BlurLayer"]
+visible = false
+material = SubResource("ShaderMaterial_s2uu7")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="GlobalSounds" type="Node" parent="."]
+
+[node name="BgmPlayer" type="AudioStreamPlayer" parent="GlobalSounds"]
+process_mode = 3
+autoplay = true
+
+[node name="StorkWarningPlayer" type="AudioStreamPlayer" parent="GlobalSounds"]
+process_mode = 3
+
+[connection signal="pressed" from="GUI/Menu/VBoxContainer/VBoxContainer/PlayButtonHolder/Button" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="GUI/Menu/VBoxContainer/VBoxContainer/OptionsButtonHolder/Button" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="GUI/Menu/VBoxContainer/VBoxContainer/QuitButtonHolder/Button" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="GUI/LevelSelect/VBoxContainer/QuitLevelSelectButton/Button" to="." method="_on_quit_button_pressed"]
