@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://cp507i7fpf26g"]
+
+[ext_resource type="Script" path="res://Scripts/Pickup.gd" id="1_4iopm"]
+[ext_resource type="Texture2D" uid="uid://cph636741ewk2" path="res://Sprites/items_spritesheet.png" id="1_gqtkb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xf6eo"]
+radius = 31.7219
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cjio1"]
+atlas = ExtResource("1_gqtkb")
+region = Rect2(505, 290, 70, 70)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xiu8x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cjio1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="CloudPickup" type="Area2D"]
+collision_layer = 32
+collision_mask = 2
+script = ExtResource("1_4iopm")
+
+[node name="CollisionShape" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_xf6eo")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1.8, 1.8)
+sprite_frames = SubResource("SpriteFrames_xiu8x")

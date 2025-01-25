@@ -72,6 +72,7 @@ float={
 2d_physics/layer_3="enemies"
 2d_physics/layer_4="enemy turning"
 2d_physics/layer_5="spikes"
+2d_physics/layer_6="collectibles"
 
 [rendering]
 
