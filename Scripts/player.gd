@@ -16,6 +16,9 @@ enum JumpState {FALLING, JUMPING, FLOATING}
 @export var max_float_speed = 600
 @export var float_recharge_speed = 2000
 @export var float_braking = 1000
+@export var heavy_gravity_multiplier = 2.0
+@export var heavy_movement_accel = 200
+@export var heavy_max_speed = 800.0
 
 var last_direction = 1
 var time_since_grounded = 0
@@ -23,6 +26,7 @@ var time_since_jump = 0
 var time_since_float = 0
 var jump_state = JumpState.FALLING
 var float_left = max_float_time
+@export var is_heavy = false
 
 @onready var main_sprite = $MainSprite
 @onready var collider: Area2D = $Collider
@@ -34,18 +38,33 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("move_left", "move_right")
 	if direction:
-		velocity.x = direction * SPEED
-		main_sprite.flip_h = direction < 0
+		if is_heavy:
+			velocity.x = move_toward(velocity.x, direction*heavy_max_speed, heavy_movement_accel*delta)
+			if sign(velocity.x) != sign(direction):
+				velocity.x = move_toward(velocity.x, direction*heavy_max_speed, heavy_movement_accel*delta)
 
+		else:
+			velocity.x = direction * SPEED
+		main_sprite.flip_h = direction < 0
+		
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		if is_heavy:
+			velocity.x = move_toward(velocity.x, 0, heavy_movement_accel*delta*2)
+				
+
+		else:
+			velocity.x = move_toward(velocity.x, 0, SPEED)
 
 		
 	# Apply gravity.
 	#if not is_on_floor():
 	time_since_grounded += delta
 	var gravity = gravity_dict[jump_state]
-	velocity.y += gravity * delta
+	if is_heavy:
+		velocity.y += gravity * delta * heavy_gravity_multiplier
+	else:
+		velocity.y += gravity * delta
+	
 	if jump_state == JumpState.FLOATING:
 		float_left -= delta
 		if abs(velocity.y) > max_float_speed:
@@ -53,12 +72,13 @@ func _physics_process(delta: float) -> void:
 				velocity.y += float_braking  * delta
 			else: 
 				velocity.y -= float_braking * delta
-
+	
 
 	if is_on_floor():
 		time_since_grounded = 0
-		if float_left < max_float_time:
-			float_left = min(float_left + float_recharge_speed*delta, max_float_time)
+		if not is_heavy:
+			if float_left < max_float_time:
+				float_left = min(float_left + float_recharge_speed*delta, max_float_time)
 
 
 
@@ -71,7 +91,7 @@ func _physics_process(delta: float) -> void:
 func handle_jump():
 	var just_jumped = Input.is_action_just_pressed("jump") and time_since_grounded < coyote_time
 	var stop_jump = Input.is_action_just_released("jump")
-	var just_floated = Input.is_action_just_pressed("float") 
+	var just_floated = Input.is_action_just_pressed("float") and not is_heavy
 	var stop_float = Input.is_action_just_released("float")
 
 	if just_jumped: 
