@@ -8,9 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://cp4xqn4tl1mbq" path="res://Sprites/idle_5.png" id="6_46kx1"]
 [ext_resource type="Texture2D" uid="uid://clxl40dh3xsq1" path="res://Sprites/idle_6.png" id="7_qkem3"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_sghfd"]
-size = Vector2(439, 421)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_d4ino"]
 animations = [{
 "frames": [{
@@ -37,17 +34,22 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_q0mpi"]
+radius = 46.0
+height = 134.0
+
 [node name="CharacterBody2D" type="CharacterBody2D"]
+collision_layer = 2
 script = ExtResource("1_e0fsx")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1008, 574)
-shape = SubResource("RectangleShape2D_sghfd")
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(1006, 559)
 scale = Vector2(0.187, 0.2)
 sprite_frames = SubResource("SpriteFrames_d4ino")
 animation = &"idle"
-frame = 1
-frame_progress = 0.0347179
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 9)
+shape = SubResource("CapsuleShape2D_q0mpi")
+
+[node name="Camera2D" type="Camera2D" parent="."]
