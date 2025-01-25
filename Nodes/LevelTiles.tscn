@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7xw7c0mhk72s"]
+
+[ext_resource type="TileSet" uid="uid://ba4wo2jhpa38v" path="res://Sprites/TileSet.tres" id="1_ihvol"]
+
+[node name="LevelTiles" type="Node2D"]
+
+[node name="GroundLayer" type="TileMapLayer" parent="."]
+use_parent_material = true
+tile_set = ExtResource("1_ihvol")
+rendering_quadrant_size = 64
