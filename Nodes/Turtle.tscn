@@ -1,8 +1,21 @@
-[gd_scene load_steps=4 format=3 uid="uid://c2oo1m2ou1fvt"]
+[gd_scene load_steps=5 format=3 uid="uid://c2oo1m2ou1fvt"]
 
 [ext_resource type="Script" path="res://Scripts/Turtle.gd" id="1_k7d7v"]
-[ext_resource type="PackedScene" uid="uid://dtdi627eoi6ig" path="res://Nodes/player.tscn" id="2_jp2hy"]
-[ext_resource type="Texture2D" uid="uid://by2yprrjp3wqw" path="res://Sprites/turtle_proto.png" id="3_cukd5"]
+[ext_resource type="Texture2D" uid="uid://cva5thd8nufn4" path="res://Sprites/turtle.png" id="2_mt2pf"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sxwyr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_mt2pf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yatq1"]
+size = Vector2(100, 18)
 
 [node name="Enemy" type="CharacterBody2D"]
 collision_layer = 4
@@ -10,12 +23,18 @@ collision_mask = 3
 script = ExtResource("1_k7d7v")
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-5.66669, 2.56249)
 polygon = PackedVector2Array(-43, 35, 55, 35, 55, -18, 25, -36, -8, -36, -24, -25, -43, -1)
 
-[node name="Player" parent="." instance=ExtResource("2_jp2hy")]
-position = Vector2(117, -37)
-
-[node name="TurtleProto" type="Sprite2D" parent="."]
-position = Vector2(10, -18)
+[node name="TurtleProto" type="AnimatedSprite2D" parent="."]
+position = Vector2(4.33332, -15.4375)
 scale = Vector2(0.173264, 0.173264)
-texture = ExtResource("3_cukd5")
+sprite_frames = SubResource("SpriteFrames_sxwyr")
+
+[node name="TurningCollider" type="Area2D" parent="."]
+position = Vector2(-5.66669, 2.56249)
+collision_layer = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TurningCollider"]
+position = Vector2(6, 14)
+shape = SubResource("RectangleShape2D_yatq1")
