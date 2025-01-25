@@ -10,7 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://davlegjakyxct" path="res://themes/Options_Music_On.png" id="7_4rqdw"]
 [ext_resource type="Texture2D" uid="uid://co1nw76pctcmy" path="res://themes/BTM_Options_button.png" id="8_wk20o"]
 [ext_resource type="Texture2D" uid="uid://da0cpgyyjeoer" path="res://themes/Bubblegirl_Neutral.png" id="9_2l04y"]
-[ext_resource type="Texture2D" uid="uid://bjbnpsao7pb0n" path="res://themes/Stamina.png" id="10_6b4x1"]
+[ext_resource type="Texture2D" uid="uid://b0raqomjxk4no" path="res://themes/Stamina_inside.png" id="10_dbs2x"]
+[ext_resource type="Texture2D" uid="uid://b71okcrmegm0l" path="res://themes/Stamina_outside.png" id="11_tlqck"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_s2uu7"]
 
@@ -432,14 +433,33 @@ offset_bottom = 721.04
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("9_2l04y")
 
-[node name="STAMINA" type="TextureRect" parent="HUD/Bubble Girl UI"]
-layout_mode = 0
-offset_left = 207.0
-offset_top = -76.0
-offset_right = 1627.0
-offset_bottom = 1304.0
+[node name="STAMINAin" type="TextureRect" parent="HUD/Bubble Girl UI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.345
+anchor_top = -0.633
+anchor_right = 0.937
+anchor_bottom = 2.242
+offset_left = -1.52588e-05
+offset_top = -0.0400009
+offset_right = 1064.8
+offset_bottom = 1034.96
 scale = Vector2(0.25, 0.25)
-texture = ExtResource("10_6b4x1")
+texture = ExtResource("10_dbs2x")
+
+[node name="STAMINAout" type="TextureRect" parent="HUD/Bubble Girl UI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.342
+anchor_top = -0.683
+anchor_right = 0.94
+anchor_bottom = 2.292
+offset_left = -0.200012
+offset_top = -0.0399933
+offset_right = 1077.0
+offset_bottom = 1070.96
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("11_tlqck")
 
 [node name="Game" type="Control" parent="."]
 process_mode = 1
