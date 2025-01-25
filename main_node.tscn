@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://5e0xeagrb3nc"]
+[gd_scene load_steps=19 format=3 uid="uid://5e0xeagrb3nc"]
 
 [ext_resource type="Script" path="res://Scripts/GameManager.gd" id="1_gaacs"]
 [ext_resource type="Texture2D" uid="uid://cyt52w0odrtti" path="res://themes/Menu_Back.png" id="1_x1uuu"]
@@ -14,7 +14,9 @@
 [ext_resource type="Texture2D" uid="uid://co1nw76pctcmy" path="res://themes/BTM_Options_button.png" id="8_wk20o"]
 [ext_resource type="Texture2D" uid="uid://da0cpgyyjeoer" path="res://themes/Bubblegirl_Neutral.png" id="9_2l04y"]
 [ext_resource type="Texture2D" uid="uid://b0raqomjxk4no" path="res://themes/Stamina_inside.png" id="10_dbs2x"]
+[ext_resource type="Texture2D" uid="uid://cienxuffabepb" path="res://themes/Options_SFX_Off.png" id="11_j14q1"]
 [ext_resource type="Texture2D" uid="uid://b71okcrmegm0l" path="res://themes/Stamina_outside.png" id="11_tlqck"]
+[ext_resource type="Texture2D" uid="uid://cfykbl5fu8pag" path="res://themes/Options_Music_Off.png" id="13_evq52"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_s2uu7"]
 
@@ -166,10 +168,10 @@ anchor_left = 0.162
 anchor_top = -0.007
 anchor_right = 0.769
 anchor_bottom = 1.124
-offset_left = 41.7
-offset_top = -258.985
-offset_right = 42.15
-offset_bottom = -258.98
+offset_left = 24.7
+offset_top = -269.985
+offset_right = 25.15
+offset_bottom = -269.98
 grow_horizontal = 2
 grow_vertical = 2
 rotation = 0.57149
@@ -280,7 +282,6 @@ custom_minimum_size = Vector2(650, 145)
 layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="GUI/OptionsMenu/VBoxContainer/SFXButtonHolder"]
-modulate = Color(0.784314, 0.784314, 0.784314, 1)
 custom_minimum_size = Vector2(0, 200)
 layout_mode = 0
 offset_left = 312.0
@@ -289,6 +290,16 @@ offset_right = 874.0
 offset_bottom = 509.0
 texture = ExtResource("6_k1v0u")
 expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="GUI/OptionsMenu/VBoxContainer/SFXButtonHolder"]
+visible = false
+layout_mode = 0
+offset_left = 315.0
+offset_top = 140.0
+offset_right = 1015.0
+offset_bottom = 640.0
+scale = Vector2(0.799847, 0.735634)
+texture = ExtResource("11_j14q1")
 
 [node name="Button" type="Button" parent="GUI/OptionsMenu/VBoxContainer/SFXButtonHolder"]
 layout_mode = 1
@@ -317,7 +328,6 @@ custom_minimum_size = Vector2(650, 145)
 layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="GUI/OptionsMenu/VBoxContainer/MusicButtonHolder"]
-modulate = Color(0.784314, 0.784314, 0.784314, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.046
@@ -330,6 +340,16 @@ offset_right = 1032.9
 offset_bottom = 797.06
 texture = ExtResource("7_4rqdw")
 expand_mode = 1
+
+[node name="TextureRect2" type="TextureRect" parent="GUI/OptionsMenu/VBoxContainer/MusicButtonHolder"]
+visible = false
+layout_mode = 0
+offset_left = 464.0
+offset_top = 309.0
+offset_right = 1164.0
+offset_bottom = 809.0
+scale = Vector2(0.762794, 0.732399)
+texture = ExtResource("13_evq52")
 
 [node name="Button" type="Button" parent="GUI/OptionsMenu/VBoxContainer/MusicButtonHolder"]
 layout_mode = 1
@@ -361,7 +381,6 @@ custom_minimum_size = Vector2(650, 145)
 layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="GUI/OptionsMenu/VBoxContainer/QuitButtonHolder"]
-modulate = Color(0.784314, 0.784314, 0.784314, 1)
 layout_mode = 0
 offset_left = 797.0
 offset_top = -21.0
