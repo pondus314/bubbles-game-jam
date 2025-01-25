@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://5e0xeagrb3nc"]
+[gd_scene load_steps=21 format=3 uid="uid://5e0xeagrb3nc"]
 
 [ext_resource type="Script" path="res://Scripts/GameManager.gd" id="1_gaacs"]
 [ext_resource type="Texture2D" uid="uid://cyt52w0odrtti" path="res://themes/Menu_Back.png" id="1_x1uuu"]
@@ -17,6 +17,8 @@
 [ext_resource type="Texture2D" uid="uid://cienxuffabepb" path="res://themes/Options_SFX_Off.png" id="11_j14q1"]
 [ext_resource type="Texture2D" uid="uid://b71okcrmegm0l" path="res://themes/Stamina_outside.png" id="11_tlqck"]
 [ext_resource type="Texture2D" uid="uid://cfykbl5fu8pag" path="res://themes/Options_Music_Off.png" id="13_evq52"]
+[ext_resource type="Texture2D" uid="uid://dke1xeuce5utm" path="res://themes/Pause_screen.png" id="15_otyub"]
+[ext_resource type="Texture2D" uid="uid://dqqf47d7r78vo" path="res://themes/Unpause_button.png" id="16_p5jl6"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_s2uu7"]
 
@@ -188,6 +190,7 @@ flat = true
 icon_alignment = 1
 
 [node name="QuitButtonHolder" type="Control" parent="GUI/Menu/VBoxContainer/VBoxContainer"]
+visible = false
 custom_minimum_size = Vector2(650, 145)
 layout_mode = 2
 
@@ -421,6 +424,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="GUI/LevelSelect"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -471,6 +475,117 @@ theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 60
 text = "Back to Main Menu"
+flat = true
+icon_alignment = 1
+
+[node name="Pause" type="Control" parent="GUI"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="GUI/Pause"]
+layout_mode = 0
+offset_left = -60.0
+offset_top = -95.0
+offset_right = 1109.0
+offset_bottom = 732.0
+scale = Vector2(1.7118, 1.57796)
+texture = ExtResource("15_otyub")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GUI/Pause"]
+size_flags_horizontal = 4
+theme_override_constants/separation = 20
+
+[node name="Unpausebuttonholder" type="Control" parent="GUI/Pause/VBoxContainer"]
+custom_minimum_size = Vector2(650, 145)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="GUI/Pause/VBoxContainer/Unpausebuttonholder"]
+modulate = Color(1, 0.894118, 0.960784, 1)
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.114
+anchor_top = -1.662
+anchor_right = 1.086
+anchor_bottom = 1.917
+offset_left = 753.1
+offset_top = 540.99
+offset_right = 753.1
+offset_bottom = 541.035
+scale = Vector2(1.524, 1.55875)
+texture = ExtResource("16_p5jl6")
+expand_mode = 1
+
+[node name="Button" type="Button" parent="GUI/Pause/VBoxContainer/Unpausebuttonholder"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.155
+anchor_top = -0.676
+anchor_right = 0.857
+anchor_bottom = 0.841
+offset_left = 901.25
+offset_top = 651.02
+offset_right = 900.95
+offset_bottom = 651.055
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.21688, 1.40297)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.117647, 0.117647, 0.117647, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+flat = true
+icon_alignment = 1
+
+[node name="OptionsButtonHolder" type="Control" parent="GUI/Pause/VBoxContainer"]
+custom_minimum_size = Vector2(650, 145)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="GUI/Pause/VBoxContainer/OptionsButtonHolder"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.046
+anchor_top = -0.828
+anchor_right = -0.046
+anchor_bottom = -0.828
+offset_left = 163.9
+offset_top = 317.06
+offset_right = 813.9
+offset_bottom = 717.06
+rotation = 0.0721255
+scale = Vector2(1.49234, 1.52821)
+texture = ExtResource("8_wk20o")
+expand_mode = 1
+
+[node name="Button" type="Button" parent="GUI/Pause/VBoxContainer/OptionsButtonHolder"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.162
+anchor_top = -0.007
+anchor_right = 0.769
+anchor_bottom = 1.124
+offset_left = 219.7
+offset_top = 405.015
+offset_right = 220.15
+offset_bottom = 405.02
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.00317717
+scale = Vector2(1.3877, 1.61836)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.117647, 0.117647, 0.117647, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+action_mode = 0
+text = "
+"
 flat = true
 icon_alignment = 1
 
@@ -571,3 +686,5 @@ process_mode = 3
 [connection signal="pressed" from="GUI/OptionsMenu/VBoxContainer/MusicButtonHolder/Button" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="GUI/OptionsMenu/VBoxContainer/QuitButtonHolder/Button" to="." method="_on_quit_button_pressed"]
 [connection signal="pressed" from="GUI/LevelSelect/VBoxContainer/QuitLevelSelectButton/Button" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="GUI/Pause/VBoxContainer/Unpausebuttonholder/Button" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="GUI/Pause/VBoxContainer/OptionsButtonHolder/Button" to="." method="_on_options_button_pressed"]
