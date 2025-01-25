@@ -8,7 +8,6 @@ enum JumpState {FALLING, JUMPING, FLOATING}
 @export var coyote_time = 0.2
 @export var jump_to_fall_v = 100
 @export var max_float_time = 1.5
-@export var has_float = false
 @export var gravity_dict = {
 	JumpState.FALLING: 980,
 	JumpState.JUMPING: 500,
@@ -16,6 +15,7 @@ enum JumpState {FALLING, JUMPING, FLOATING}
 }
 @export var max_float_speed = 600
 @export var float_recharge_speed = 2000
+@export var float_braking = 1000
 
 var last_direction = 1
 var time_since_grounded = 0
@@ -42,23 +42,26 @@ func _physics_process(delta: float) -> void:
 
 		
 	# Apply gravity.
-	if not is_on_floor():
-		time_since_grounded += delta
-		var gravity = gravity_dict[jump_state]
-		velocity.y += gravity * delta
-		if jump_state == JumpState.FLOATING:
-			float_left -= delta
-			if -velocity.y > max_float_speed:
-				velocity.y -= gravity * delta * 2
-		
-		
+	#if not is_on_floor():
+	time_since_grounded += delta
+	var gravity = gravity_dict[jump_state]
+	velocity.y += gravity * delta
+	if jump_state == JumpState.FLOATING:
+		float_left -= delta
+		if abs(velocity.y) > max_float_speed:
+			if velocity.y < 0:
+				velocity.y += float_braking  * delta
+			else: 
+				velocity.y -= float_braking * delta
+
+
 	if is_on_floor():
 		time_since_grounded = 0
 		if float_left < max_float_time:
 			float_left = min(float_left + float_recharge_speed*delta, max_float_time)
-			
-	
-	
+
+
+
 	# Jump if jump button pressed.
 	handle_jump()
 
