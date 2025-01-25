@@ -167,6 +167,8 @@ texture_region_size = Vector2i(70, 70)
 0:5/1/physics_layer_0/polygon_0/points = PackedVector2Array(-35, -35, 35, -35, 35, 35, -35, 35)
 0:5/1/terrains_peering_bit/top_left_corner = 0
 0:5/1/terrains_peering_bit/top_right_corner = 0
+6:0/0 = 0
+6:0/0/physics_layer_2/polygon_0/points = PackedVector2Array(-35, -35, 35, -35, 35, 35, -35, 35)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_oyhcp"]
 texture = ExtResource("2_rtpes")
@@ -476,6 +478,8 @@ tile_size = Vector2i(70, 70)
 physics_layer_0/collision_layer = 1
 physics_layer_1/collision_layer = 16
 physics_layer_1/collision_mask = 5
+physics_layer_2/collision_layer = 8
+physics_layer_2/collision_mask = 0
 terrain_set_0/mode = 1
 terrain_set_0/terrain_0/name = "Ground"
 terrain_set_0/terrain_0/color = Color(0.501961, 1, 0.25098, 1)

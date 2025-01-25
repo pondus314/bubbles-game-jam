@@ -8,3 +8,4 @@
 use_parent_material = true
 tile_set = ExtResource("1_ihvol")
 rendering_quadrant_size = 64
+collision_visibility_mode = 1
