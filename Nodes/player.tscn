@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://clxl40dh3xsq1" path="res://Sprites/idle_6.png" id="7_qkem3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sghfd"]
-size = Vector2(660, 774)
+size = Vector2(439, 421)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_d4ino"]
 animations = [{
@@ -41,12 +41,12 @@ animations = [{
 script = ExtResource("1_e0fsx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(983, 554)
+position = Vector2(1008, 574)
 shape = SubResource("RectangleShape2D_sghfd")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(1125, 485.5)
-scale = Vector2(0.840625, 0.887963)
+position = Vector2(1006, 559)
+scale = Vector2(0.187, 0.2)
 sprite_frames = SubResource("SpriteFrames_d4ino")
 animation = &"idle"
 frame = 1
