@@ -43,10 +43,16 @@ scale = Vector2(0.187, 0.2)
 sprite_frames = SubResource("SpriteFrames_d4ino")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.628149
+frame_progress = 0.407959
 
-[node name="MainCollider" type="CollisionShape2D" parent="."]
+[node name="MovementHitbox" type="CollisionShape2D" parent="."]
 position = Vector2(0, 9)
 shape = SubResource("CapsuleShape2D_q0mpi")
 
 [node name="Camera" type="Camera2D" parent="."]
+
+[node name="Collider" type="Area2D" parent="."]
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collider"]
+shape = SubResource("CapsuleShape2D_q0mpi")

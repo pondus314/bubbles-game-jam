@@ -6,7 +6,7 @@ enum JumpState {FALLING, JUMPING, FLOATING}
 @export var health = 1
 @export var jump_power = 550
 @export var coyote_time = 0.2
-@export var jump_to_float_v = 100
+@export var jump_to_float_v = -50
 @export var max_float_time = 1.5
 @export var has_float = false
 @export var gravity_dict = {
@@ -23,17 +23,17 @@ var jump_state = JumpState.FALLING
 
 
 @onready var main_sprite = $MainSprite
+@onready var collider: Area2D = $Collider
 
 func _ready() -> void:
 	Global.player = self
+	self.collider.body_entered.connect(func(_body): on_death(""))
 
 func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("move_left", "move_right")
 	if direction:
 		velocity.x = direction * SPEED
-		if last_direction != direction:
-			main_sprite.scale.x *= -1
-			last_direction *= -1
+		main_sprite.flip_h = direction < 0
 
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
@@ -76,3 +76,7 @@ func handle_jump():
 		if time_since_float > max_float_time:
 			jump_state = JumpState.FALLING
 			time_since_float = 0
+
+
+func on_death(message: String) -> void:
+	Global.main_scene.game_over()
