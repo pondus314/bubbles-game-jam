@@ -1,5 +1,6 @@
 [gd_scene load_steps=13 format=3 uid="uid://5e0xeagrb3nc"]
 
+[ext_resource type="Script" path="res://Scripts/GameManager.gd" id="1_gaacs"]
 [ext_resource type="Texture2D" uid="uid://cyt52w0odrtti" path="res://themes/Menu_Back.png" id="1_x1uuu"]
 [ext_resource type="Texture2D" uid="uid://dqb026nocusjp" path="res://themes/Play_game_menu_button.png" id="2_f8giw"]
 [ext_resource type="Texture2D" uid="uid://6s8qevcpf10a" path="res://themes/Options_menu_button.png" id="3_rqvrp"]
@@ -21,6 +22,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_gaacs")
 
 [node name="GUI" type="CanvasLayer" parent="."]
 
@@ -216,6 +218,7 @@ offset_right = 0.00195313
 texture = ExtResource("5_k4r6k")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="GUI/OptionsMenu"]
+layout_mode = 0
 offset_right = 650.0
 offset_bottom = 475.0
 size_flags_horizontal = 4
