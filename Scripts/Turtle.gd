@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 @export var current_direction = -1
 
-var since_turned = 0.0
+
 const SPEED = 150.0
 
 @onready var turn_collider: Area2D = $TurningCollider
@@ -16,7 +16,7 @@ func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-	since_turned += delta
+	
 	# Handle jump.
 
 	# Get the input direction and handle the movement/deceleration.

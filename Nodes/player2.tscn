@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://cn7ftroc6855w"]
+
+[ext_resource type="Texture2D" uid="uid://nicoshcoyg5m" path="res://Sprites/cute-pixel-cartoon-8bit-character-man-exercises-training-dance-lifestyle-music-decoration-life-style-8-bit-male-boy-dance-with-music-game-fitness-isolated-vector.jpg" id="1_js5yb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sghfd"]
+size = Vector2(469, 475)
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_sghfd")
+
+[node name="Cute-pixel-cartoon-8Bit-character-man-exercises-training-dance-lifestyle-music-decoration-life-style-8-bit-male-boy-dance-with-music-game-fitness-isolated-vector" type="Sprite2D" parent="."]
+scale = Vector2(0.467222, 0.475505)
+texture = ExtResource("1_js5yb")

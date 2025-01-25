@@ -1,6 +1,6 @@
 class_name GameManager extends Control
 
-@export var level_count = 1
+@export var level_count = 2
 
 @onready var hud = $HUD
 @onready var gui = $GUI
@@ -63,7 +63,7 @@ func next_level():
 
 func start_game():
 	#load_menu(MenuType.PAUSE)
-	load_level("level_1")
+	load_level("level_2")
 	unpause_game()
 
 func pause_game() -> void:
