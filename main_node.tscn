@@ -1,12 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://5e0xeagrb3nc"]
+[gd_scene load_steps=12 format=3 uid="uid://5e0xeagrb3nc"]
 
 [ext_resource type="Texture2D" uid="uid://cyt52w0odrtti" path="res://themes/Menu_Back.png" id="1_x1uuu"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0x4q4"]
-region = Rect2(840, 350, 70, 70)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_p23r2"]
-region = Rect2(840, 280, 70, 70)
+[ext_resource type="Texture2D" uid="uid://dqb026nocusjp" path="res://themes/Play_game_menu_button.png" id="2_f8giw"]
+[ext_resource type="Texture2D" uid="uid://6s8qevcpf10a" path="res://themes/Options_menu_button.png" id="3_rqvrp"]
+[ext_resource type="Texture2D" uid="uid://kduttwt8bu70" path="res://themes/Exit_game_menu_button.png" id="4_3oo7m"]
+[ext_resource type="Texture2D" uid="uid://dws3vbbld025m" path="res://themes/Options_screen.png" id="5_k4r6k"]
+[ext_resource type="Texture2D" uid="uid://coirmap8ed5uk" path="res://themes/Options_SFX_On.png" id="6_k1v0u"]
+[ext_resource type="Texture2D" uid="uid://davlegjakyxct" path="res://themes/Options_Music_On.png" id="7_4rqdw"]
+[ext_resource type="Texture2D" uid="uid://co1nw76pctcmy" path="res://themes/BTM_Options_button.png" id="8_wk20o"]
+[ext_resource type="Texture2D" uid="uid://da0cpgyyjeoer" path="res://themes/Bubblegirl_Neutral.png" id="9_2l04y"]
+[ext_resource type="Texture2D" uid="uid://bjbnpsao7pb0n" path="res://themes/Stamina.png" id="10_6b4x1"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_s2uu7"]
 
@@ -21,6 +24,7 @@ grow_vertical = 2
 [node name="GUI" type="CanvasLayer" parent="."]
 
 [node name="BackgroundColor" type="TextureRect" parent="GUI"]
+modulate = Color(0.456735, 0.930367, 0.7182, 1)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -83,17 +87,27 @@ custom_minimum_size = Vector2(650, 145)
 layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="GUI/Menu/VBoxContainer/VBoxContainer/PlayButtonHolder"]
-modulate = Color(0.784314, 0.784314, 0.784314, 1)
+modulate = Color(1, 0.894118, 0.960784, 1)
+custom_minimum_size = Vector2(0, 200)
 layout_mode = 0
-offset_right = 650.0
-offset_bottom = 145.0
+offset_left = -74.0
+offset_top = -241.0
+offset_right = 706.0
+offset_bottom = 278.0
+texture = ExtResource("2_f8giw")
 expand_mode = 1
 
 [node name="Button" type="Button" parent="GUI/Menu/VBoxContainer/VBoxContainer/PlayButtonHolder"]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = -1
+anchor_left = 0.155
+anchor_top = -0.676
+anchor_right = 0.857
+anchor_bottom = 0.841
+offset_left = 0.25
+offset_top = 0.0200119
+offset_right = -0.0500488
+offset_bottom = 0.0550003
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
@@ -102,7 +116,6 @@ theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 60
-text = "Play Game"
 flat = true
 icon_alignment = 1
 
@@ -111,17 +124,30 @@ custom_minimum_size = Vector2(650, 145)
 layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="GUI/Menu/VBoxContainer/VBoxContainer/OptionsButtonHolder"]
-modulate = Color(0.784314, 0.784314, 0.784314, 1)
-layout_mode = 0
-offset_right = 650.0
-offset_bottom = 145.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.046
+anchor_top = -0.828
+anchor_right = -0.046
+anchor_bottom = -0.828
+offset_left = -0.0999985
+offset_top = 0.0600128
+offset_right = 649.9
+offset_bottom = 400.06
+texture = ExtResource("3_rqvrp")
 expand_mode = 1
 
 [node name="Button" type="Button" parent="GUI/Menu/VBoxContainer/VBoxContainer/OptionsButtonHolder"]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = -1
+anchor_left = 0.162
+anchor_top = -0.007
+anchor_right = 0.769
+anchor_bottom = 1.124
+offset_left = -0.300003
+offset_top = 0.015
+offset_right = 0.149963
+offset_bottom = 0.019989
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
@@ -131,7 +157,7 @@ theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 60
 action_mode = 0
-text = "Options
+text = "
 "
 flat = true
 icon_alignment = 1
@@ -141,17 +167,25 @@ custom_minimum_size = Vector2(650, 145)
 layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="GUI/Menu/VBoxContainer/VBoxContainer/QuitButtonHolder"]
-modulate = Color(0.784314, 0.784314, 0.784314, 1)
+modulate = Color(0.982343, 0.982342, 0.982342, 1)
 layout_mode = 0
-offset_right = 650.0
-offset_bottom = 145.0
+offset_top = 10.0
+offset_right = 620.0
+offset_bottom = 210.0
+texture = ExtResource("4_3oo7m")
 expand_mode = 1
 
 [node name="Button" type="Button" parent="GUI/Menu/VBoxContainer/VBoxContainer/QuitButtonHolder"]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = -1
+anchor_left = 0.118
+anchor_top = 0.193
+anchor_right = 0.865
+anchor_bottom = 1.421
+offset_left = 0.299995
+offset_top = 0.0149994
+offset_right = -0.250061
+offset_bottom = -0.0450134
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
@@ -160,15 +194,148 @@ theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 60
-text = "Exit Game"
 flat = true
 icon_alignment = 1
 
 [node name="OptionsMenu" type="Control" parent="GUI"]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="TextureRect" type="TextureRect" parent="GUI/OptionsMenu"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -1.2
+anchor_top = -0.5
+anchor_right = 49.275
+anchor_bottom = 27.625
+offset_right = 0.00195313
+texture = ExtResource("5_k4r6k")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GUI/OptionsMenu"]
+offset_right = 650.0
+offset_bottom = 475.0
+size_flags_horizontal = 4
+theme_override_constants/separation = 20
+
+[node name="SFXButtonHolder" type="Control" parent="GUI/OptionsMenu/VBoxContainer"]
+custom_minimum_size = Vector2(650, 145)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="GUI/OptionsMenu/VBoxContainer/SFXButtonHolder"]
+modulate = Color(0.784314, 0.784314, 0.784314, 1)
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 0
+offset_left = 312.0
+offset_top = 135.0
+offset_right = 874.0
+offset_bottom = 509.0
+texture = ExtResource("6_k1v0u")
+expand_mode = 1
+
+[node name="Button" type="Button" parent="GUI/OptionsMenu/VBoxContainer/SFXButtonHolder"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.562
+anchor_top = 1.248
+anchor_right = 1.251
+anchor_bottom = 3.214
+offset_left = -0.300018
+offset_top = 0.0399933
+offset_right = -0.150024
+offset_bottom = -0.0300293
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.117647, 0.117647, 0.117647, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+flat = true
+icon_alignment = 1
+
+[node name="MusicButtonHolder" type="Control" parent="GUI/OptionsMenu/VBoxContainer"]
+custom_minimum_size = Vector2(650, 145)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="GUI/OptionsMenu/VBoxContainer/MusicButtonHolder"]
+modulate = Color(0.784314, 0.784314, 0.784314, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.046
+anchor_top = -0.828
+anchor_right = -0.046
+anchor_bottom = -0.828
+offset_left = 490.9
+offset_top = 430.06
+offset_right = 1032.9
+offset_bottom = 797.06
+texture = ExtResource("7_4rqdw")
+expand_mode = 1
+
+[node name="Button" type="Button" parent="GUI/OptionsMenu/VBoxContainer/MusicButtonHolder"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.802
+anchor_top = 2.393
+anchor_right = 1.446
+anchor_bottom = 4.414
+offset_left = -0.300049
+offset_top = 0.0149841
+offset_right = 0.0999146
+offset_bottom = -0.0300293
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.117647, 0.117647, 0.117647, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+action_mode = 0
+text = "
+"
+flat = true
+icon_alignment = 1
+
+[node name="QuitButtonHolder" type="Control" parent="GUI/OptionsMenu/VBoxContainer"]
+custom_minimum_size = Vector2(650, 145)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="GUI/OptionsMenu/VBoxContainer/QuitButtonHolder"]
+modulate = Color(0.784314, 0.784314, 0.784314, 1)
+layout_mode = 0
+offset_left = 797.0
+offset_top = -21.0
+offset_right = 1777.0
+offset_bottom = 651.0
+texture = ExtResource("8_wk20o")
+expand_mode = 1
+
+[node name="Button" type="Button" parent="GUI/OptionsMenu/VBoxContainer/QuitButtonHolder"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.542
+anchor_top = 1.069
+anchor_right = 2.425
+anchor_bottom = 3.29
+offset_left = -0.300049
+offset_top = -0.00500488
+offset_right = -0.250122
+offset_bottom = -0.0500183
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.117647, 0.117647, 0.117647, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 60
+flat = true
+icon_alignment = 1
 
 [node name="LevelSelect" type="Control" parent="GUI"]
 visible = false
@@ -239,7 +406,7 @@ icon_alignment = 1
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
-[node name="Control" type="Control" parent="HUD"]
+[node name="Bubble Girl UI" type="Control" parent="HUD"]
 custom_minimum_size = Vector2(600, 120)
 layout_mode = 3
 anchors_preset = 0
@@ -248,42 +415,28 @@ offset_bottom = 120.0
 size_flags_horizontal = 2
 size_flags_vertical = 2
 
-[node name="PopCounter" type="HBoxContainer" parent="HUD/Control"]
-layout_mode = 1
-anchors_preset = 4
-anchor_top = 0.5
-anchor_bottom = 0.5
-offset_left = 40.0
-offset_top = -40.0
-offset_right = 206.0
-offset_bottom = 73.0
-grow_vertical = 2
-
-[node name="TextureRect2" type="TextureRect" parent="HUD/Control/PopCounter"]
-layout_mode = 2
-size_flags_vertical = 4
-texture = SubResource("AtlasTexture_0x4q4")
-
-[node name="TextureRect" type="TextureRect" parent="HUD/Control/PopCounter/TextureRect2"]
+[node name="Bubblegirl_UI_Head" type="TextureRect" parent="HUD/Bubble Girl UI"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 0.007
-anchor_right = 0.5
-anchor_bottom = 0.007
-offset_left = -32.0
-offset_top = -18.49
-offset_right = 33.0
-offset_bottom = 46.51
-grow_horizontal = 2
-texture = SubResource("AtlasTexture_p23r2")
-expand_mode = 1
-stretch_mode = 4
+anchor_left = -0.178
+anchor_top = -0.392
+anchor_right = 0.58
+anchor_bottom = 2.183
+offset_left = -0.199997
+offset_top = 0.0400009
+offset_right = 1061.0
+offset_bottom = 721.04
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("9_2l04y")
 
-[node name="ScoreLabel" type="Label" parent="HUD/Control/PopCounter"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 80
-text = "40"
+[node name="STAMINA" type="TextureRect" parent="HUD/Bubble Girl UI"]
+layout_mode = 0
+offset_left = 207.0
+offset_top = -76.0
+offset_right = 1627.0
+offset_bottom = 1304.0
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("10_6b4x1")
 
 [node name="Game" type="Control" parent="."]
 process_mode = 1
@@ -320,4 +473,7 @@ process_mode = 3
 [connection signal="pressed" from="GUI/Menu/VBoxContainer/VBoxContainer/PlayButtonHolder/Button" to="." method="_on_play_button_pressed"]
 [connection signal="pressed" from="GUI/Menu/VBoxContainer/VBoxContainer/OptionsButtonHolder/Button" to="." method="_on_options_button_pressed"]
 [connection signal="pressed" from="GUI/Menu/VBoxContainer/VBoxContainer/QuitButtonHolder/Button" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="GUI/OptionsMenu/VBoxContainer/SFXButtonHolder/Button" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="GUI/OptionsMenu/VBoxContainer/MusicButtonHolder/Button" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="GUI/OptionsMenu/VBoxContainer/QuitButtonHolder/Button" to="." method="_on_quit_button_pressed"]
 [connection signal="pressed" from="GUI/LevelSelect/VBoxContainer/QuitLevelSelectButton/Button" to="." method="_on_quit_button_pressed"]
