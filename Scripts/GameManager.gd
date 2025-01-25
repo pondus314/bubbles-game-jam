@@ -5,7 +5,7 @@ enum GameState{
 }
 
 
-@export var level_count = 2
+@export var level_count = 3
 
 @onready var hud = $HUD
 @onready var gui = $GUI
