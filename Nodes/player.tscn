@@ -43,7 +43,7 @@ scale = Vector2(0.187, 0.2)
 sprite_frames = SubResource("SpriteFrames_d4ino")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.58346
+frame_progress = 0.663138
 
 [node name="MovementHitbox" type="CollisionShape2D" parent="."]
 position = Vector2(0, 9)

@@ -47,7 +47,6 @@ func _physics_process(delta: float) -> void:
 		var gravity = gravity_dict[jump_state]
 		velocity.y += gravity * delta
 		if jump_state == JumpState.FLOATING:
-			print(velocity.y)
 			float_left -= delta
 			if -velocity.y > max_float_speed:
 				velocity.y -= gravity * delta * 2
@@ -88,7 +87,7 @@ func handle_jump():
 			jump_state = JumpState.FALLING
 
 	if jump_state == JumpState.FLOATING:
-		if float_left < 0.0:
+		if stop_float or float_left < 0.0:
 			jump_state = JumpState.FALLING
 
 
