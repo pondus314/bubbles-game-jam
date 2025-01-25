@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://c2oo1m2ou1fvt"]
+[gd_scene load_steps=5 format=3 uid="uid://bce57h8o0fg7a"]
 
 [ext_resource type="Script" path="res://Scripts/Turtle.gd" id="1_k7d7v"]
 [ext_resource type="Texture2D" uid="uid://cva5thd8nufn4" path="res://Sprites/turtle.png" id="2_mt2pf"]
@@ -34,7 +34,7 @@ sprite_frames = SubResource("SpriteFrames_sxwyr")
 [node name="TurningCollider" type="Area2D" parent="."]
 position = Vector2(-5.66669, 2.56249)
 collision_layer = 0
-collision_mask = 8
+collision_mask = 9
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TurningCollider"]
 position = Vector2(6, 14)
