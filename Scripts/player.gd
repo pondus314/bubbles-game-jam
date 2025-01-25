@@ -1,19 +1,25 @@
 extends CharacterBody2D
 
+enum JumpState {FALLING, JUMPING, FLOATING}
 
 @export var SPEED = 400.0
 @export var health = 1
 @export var jump_power = 550
-@export var jump_gravity = 500
-@export var fall_gravity = 980
 @export var coyote_time = 0.2
-@export var jump_to_fall_v = 100
+@export var jump_to_float_v = 100
+@export var max_float_time = 1.5
+@export var has_float = false
+@export var gravity_dict = {
+	JumpState.FALLING: 980,
+	JumpState.JUMPING: 500,
+	JumpState.FLOATING: -400,
+}
 
 var last_direction = 1
 var time_since_grounded = 0
 var time_since_jump = 0
-var jumping = false
-var falling = true
+var time_since_float = 0
+var jump_state = JumpState.FALLING
 
 
 @onready var main_sprite = $MainSprite
@@ -32,21 +38,22 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
-	move_and_slide()
+	if jump_state == JumpState.FLOATING:
+		time_since_float += delta
 
 	# Apply gravity.
 	if not is_on_floor():
 		time_since_grounded += delta
-		if jumping: 
-			velocity.y += jump_gravity * delta
-		else:
-			velocity.y += fall_gravity * delta
+		var gravity = gravity_dict[jump_state]
+		velocity.y += gravity * delta
 	
 	if is_on_floor():
 		time_since_grounded = 0
 	
 	# Jump if jump button pressed.
 	handle_jump()
+
+	move_and_slide()
 
 
 func handle_jump():
@@ -55,12 +62,16 @@ func handle_jump():
 	
 	if just_jumped: 
 		time_since_grounded += 10
-		jumping = true
+		jump_state = JumpState.JUMPING
 		velocity.y = -1 * (jump_power)
 	
 	if stop_jump:
-		jumping = false
+		jump_state = JumpState.FALLING
 	
-	if jumping:
-		if velocity.y > -jump_to_fall_v: 
-			jumping = false
+	if jump_state == JumpState.JUMPING:
+		if velocity.y > -jump_to_float_v: 
+			jump_state = JumpState.FLOATING
+
+	if jump_state == JumpState.FLOATING:
+		if time_since_float > max_float_time:
+			jump_state = JumpState.FALLING
