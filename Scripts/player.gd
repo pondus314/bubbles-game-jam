@@ -75,3 +75,4 @@ func handle_jump():
 	if jump_state == JumpState.FLOATING:
 		if time_since_float > max_float_time:
 			jump_state = JumpState.FALLING
+			time_since_float = 0
