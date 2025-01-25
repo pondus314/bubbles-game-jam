@@ -28,7 +28,7 @@ var jump_state = JumpState.FALLING
 var float_left = max_float_time
 var extra_weight = 0.0
 
-@onready var main_sprite = $MainSprite
+@onready var main_sprite:AnimatedSprite2D = $MainSprite
 @onready var collider: Area2D = $Collider
 
 func _ready() -> void:
@@ -102,16 +102,24 @@ func handle_jump():
 	
 	if just_floated:
 		jump_state = JumpState.FLOATING
+		main_sprite.play("inflating")
 	
+		
 	if jump_state == JumpState.JUMPING:
 		if stop_jump: 
 			jump_state = JumpState.FALLING
+			
+			
 		elif velocity.y > - jump_to_fall_v: 
 			jump_state = JumpState.FALLING
+			
+			
 
 	if jump_state == JumpState.FLOATING:
 		if stop_float or float_left < 0.0:
 			jump_state = JumpState.FALLING
+			
+			
 
 
 func on_death(message: String) -> void:
@@ -122,3 +130,13 @@ func on_pickup_collect(weight_gained):
 	self.extra_weight += weight_gained
 	
  
+func _on_main_sprite_animation_finished():
+	if jump_state == JumpState.FLOATING:
+		main_sprite.play("looping")
+		
+	if jump_state == JumpState.FALLING:
+		main_sprite.play("inflating", 0.5, true)
+	else:
+		main_sprite.stop()
+	
+	pass 
