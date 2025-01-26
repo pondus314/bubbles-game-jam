@@ -25,7 +25,7 @@ var time_since_grounded = 0
 var time_since_jump = 0
 var time_since_float = 0
 var jump_state = JumpState.FALLING
-var float_left = max_float_time
+var float_left: float
 var extra_weight = 0.0
 
 @onready var main_sprite = $MainSprite
@@ -34,6 +34,7 @@ var extra_weight = 0.0
 func _ready() -> void:
 	Global.player = self
 	self.collider.body_entered.connect(func(_body): on_death(""))
+	float_left = max_float_time
 
 func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("move_left", "move_right")
@@ -67,6 +68,7 @@ func _physics_process(delta: float) -> void:
 	
 	if jump_state == JumpState.FLOATING:
 		float_left -= delta
+		Global.main_scene.stamina_bar.value = float_left / max_float_time
 		if abs(velocity.y) > max_float_speed:
 			if velocity.y < 0:
 				velocity.y += float_braking  * delta
@@ -79,7 +81,7 @@ func _physics_process(delta: float) -> void:
 		if not extra_weight > 0.001:
 			if float_left < max_float_time:
 				float_left = min(float_left + float_recharge_speed*delta, max_float_time)
-
+				Global.main_scene.stamina_bar.value = float_left / max_float_time
 
 
 	# Jump if jump button pressed.
@@ -120,5 +122,3 @@ func on_death(message: String) -> void:
 
 func on_pickup_collect(weight_gained):
 	self.extra_weight += weight_gained
-	
- 
