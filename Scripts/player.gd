@@ -142,7 +142,7 @@ func on_death(message: String) -> void:
 
 func on_pickup_collect(weight_gained):
 	self.extra_weight += weight_gained
-	float_left = clamp(float_left, 0, max_float_time*(1-extra_weight))
+	float_left = clamp(float_left, 0, max_float_time*clamp(1-extra_weight, 0, 1))
 
 func _on_main_sprite_animation_finished():
 	print(main_sprite.animation)
@@ -166,7 +166,7 @@ func collision_detected(body: Node2D):
 			on_death("")
 
 func get_accel() -> float:
-	return heavy_movement_accel*extra_weight + (1-extra_weight) * 2000
+	return heavy_movement_accel*clamp(extra_weight, 0, 1) + clamp(1-extra_weight, 0, 1) * 2000
 
 func get_max_speed():
-	heavy_max_speed*extra_weight + SPEED * (1-extra_weight)
+	return heavy_max_speed*clamp(extra_weight, 0, 1) + SPEED * clamp(1-extra_weight, 0, 1)

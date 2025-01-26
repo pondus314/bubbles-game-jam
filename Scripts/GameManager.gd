@@ -78,7 +78,7 @@ func next_level():
 
 func start_game():
 	current_state = GameState.GAME
-	load_level("level_3")
+	load_level("level_1")
 	unpause_game()
 
 func pause_game() -> void:
