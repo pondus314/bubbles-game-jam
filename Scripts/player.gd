@@ -31,6 +31,7 @@ var deflation_queued = false
 var in_bubbles_counter = 0
 @onready var main_sprite:AnimatedSprite2D = $MainSprite
 @onready var collider: Area2D = $Collider
+@onready var jump: AudioStreamPlayer2D = $jump
 
 func _ready() -> void:
 	Global.player = self
@@ -106,6 +107,7 @@ func handle_jump():
 		time_since_grounded += 10
 		jump_state = JumpState.JUMPING
 		velocity.y = -1 * (jump_power)
+		jump.play()
 
 	
 	if just_floated:

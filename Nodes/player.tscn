@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dtdi627eoi6ig"]
+[gd_scene load_steps=15 format=3 uid="uid://dtdi627eoi6ig"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_e0fsx"]
 [ext_resource type="Texture2D" uid="uid://lvfyuixfefqc" path="res://Sprites/Player/Inflating/inflating0000.png" id="2_2ot7l"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://b5ojj6u56xkmn" path="res://Sprites/Player/idle/idle4.png" id="6_ea6or"]
 [ext_resource type="Texture2D" uid="uid://cxp6dgsry2kx5" path="res://Sprites/Player/Inflating/inflating0008.png" id="6_px3im"]
 [ext_resource type="Texture2D" uid="uid://fpn8ars0ano8" path="res://Sprites/Player/Inflating/inflating0010.png" id="7_c3wqt"]
+[ext_resource type="AudioStream" uid="uid://bxwncsrxamw8" path="res://sounds/350903__cabled_mess__jump_c_03.wav" id="12_vayve"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_d4ino"]
 animations = [{
@@ -89,5 +90,10 @@ collision_mask = 212
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collider"]
 shape = SubResource("CapsuleShape2D_q0mpi")
+
+[node name="jump" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_vayve")
+volume_db = 5.685
+bus = &"SFX"
 
 [connection signal="animation_finished" from="MainSprite" to="." method="_on_main_sprite_animation_finished"]
