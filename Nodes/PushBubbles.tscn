@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://bgbimusmjex48"]
 
 [ext_resource type="Texture2D" uid="uid://cph636741ewk2" path="res://Sprites/items_spritesheet.png" id="1_a1mki"]
-[ext_resource type="Texture2D" uid="uid://iycjc2mqg8c8" path="res://Sprites/bubble_small.PNG" id="1_s4lrg"]
+[ext_resource type="Texture2D" uid="uid://3levvqouur0t" path="res://Sprites/bubble_cropped.PNG" id="1_qopiy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hws1t"]
 size = Vector2(170.25, 334.5)
@@ -30,10 +30,15 @@ position = Vector2(0, -168)
 shape = SubResource("RectangleShape2D_hws1t")
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2(0, -60)
+rotation = 3.14159
 amount = 50
-texture = ExtResource("1_s4lrg")
+texture = ExtResource("1_qopiy")
 emission_shape = 3
-emission_rect_extents = Vector2(50, 80)
+emission_rect_extents = Vector2(80, 60)
+gravity = Vector2(0, -580)
+scale_amount_min = 0.0
+scale_amount_max = 0.01
 
 [node name="Node2D" type="Node2D" parent="."]
 visible = false
