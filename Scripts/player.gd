@@ -43,9 +43,9 @@ func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("move_left", "move_right")
 	if direction:
 		if extra_weight > 0.001:
-			velocity.x = move_toward(velocity.x, direction*heavy_max_speed, heavy_movement_accel*delta)
+			velocity.x = move_toward(velocity.x, direction*get_max_speed(), get_accel()*delta)
 			if sign(velocity.x) != sign(direction):
-				velocity.x = move_toward(velocity.x, direction*heavy_max_speed, heavy_movement_accel*delta)
+				velocity.x = move_toward(velocity.x, direction*get_max_speed(), get_accel()*delta)
 
 		else:
 			velocity.x = direction * SPEED
@@ -53,7 +53,7 @@ func _physics_process(delta: float) -> void:
 		
 	else:
 		if extra_weight > 0.001:
-			velocity.x = move_toward(velocity.x, 0, heavy_movement_accel*delta*2)
+			velocity.x = move_toward(velocity.x, 0, get_accel()*delta*2)
 				
 
 		else:
@@ -164,3 +164,9 @@ func collision_detected(body: Node2D):
 			Global.main_scene.finish_level()
 		else:
 			on_death("")
+
+func get_accel() -> float:
+	return heavy_movement_accel*extra_weight + (1-extra_weight) * 2000
+
+func get_max_speed():
+	heavy_max_speed*extra_weight + SPEED * (1-extra_weight)
