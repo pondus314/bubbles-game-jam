@@ -29,6 +29,8 @@ func _ready() -> void:
 	get_tree().paused = true
 	process_mode = Node.PROCESS_MODE_ALWAYS
 	Global.main_scene = self
+	gui.show()
+	hud.hide()
 	main_menu.show()
 	options_menu.hide()
 	pause_menu.hide()
