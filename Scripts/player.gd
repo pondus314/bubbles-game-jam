@@ -157,7 +157,7 @@ func _on_main_sprite_animation_finished():
 	
 func collision_detected(body: Node2D):
 	print("entered body")
-	if body.is_in_group("enemies"):
+	if body.is_in_group("enemies") or body is TileMapLayer:
 		on_death("")
 	elif body.is_in_group("urchin_boy"):
 		if extra_weight > 0.9: 
