@@ -54,7 +54,6 @@ grow_vertical = 2
 texture = ExtResource("1_x1uuu")
 
 [node name="MainMenu" type="Control" parent="GUI"]
-visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -273,6 +272,7 @@ texture = ExtResource("7_m16uy")
 metadata/_edit_use_anchors_ = true
 
 [node name="OptionsMenu" type="Control" parent="GUI"]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -493,6 +493,7 @@ flat = true
 icon_alignment = 1
 
 [node name="PauseMenu" type="Control" parent="GUI"]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -660,7 +661,6 @@ grow_vertical = 2
 
 [node name="GameBackground" type="CanvasLayer" parent="."]
 layer = -1
-visible = false
 
 [node name="BG outline" type="TextureRect" parent="GameBackground"]
 z_index = 5
@@ -669,13 +669,13 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -965.0
-offset_top = -1219.0
-offset_right = 2535.0
-offset_bottom = 1981.0
+offset_left = -968.0
+offset_top = -549.0
+offset_right = 2532.0
+offset_bottom = 2651.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.55, 0.55)
+scale = Vector2(0.552146, 0.34527)
 texture = ExtResource("20_07g66")
 
 [node name="BG main" type="TextureRect" parent="GameBackground"]
@@ -684,13 +684,13 @@ anchors_preset = -1
 anchor_left = -0.003
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 0.76
-offset_top = -679.0
-offset_right = 1575.0
-offset_bottom = 1441.0
+offset_left = 56.76
+offset_top = -4.0
+offset_right = 1631.0
+offset_bottom = 2116.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.55, 0.55)
+scale = Vector2(0.515688, 0.322342)
 texture = ExtResource("20_8oasg")
 
 [node name="TextureRect3" type="TextureRect" parent="GameBackground"]
@@ -699,94 +699,132 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Plant" type="Sprite2D" parent="GameBackground"]
-position = Vector2(395, 1300)
+position = Vector2(493, 1383)
 rotation = -1.59845
 texture = ExtResource("22_8h65t")
 
 [node name="Rock1" type="Sprite2D" parent="GameBackground"]
-position = Vector2(127, -764)
+position = Vector2(134.634, -695.917)
 rotation = 0.14561
 texture = ExtResource("23_dflep")
 
 [node name="Rock2" type="Sprite2D" parent="GameBackground"]
-position = Vector2(1400, -560)
+position = Vector2(1407.63, -491.917)
 texture = ExtResource("24_6wvtm")
 
 [node name="Riasa1" type="Sprite2D" parent="GameBackground"]
-position = Vector2(-121, 755)
+position = Vector2(-94, 857)
 rotation = 2.41766
 scale = Vector2(0.483573, 0.380233)
 texture = ExtResource("25_fafxd")
 
 [node name="Riasa2" type="Sprite2D" parent="GameBackground"]
-position = Vector2(1873, 145)
+position = Vector2(1880.63, 213.083)
 rotation = 0.308932
 scale = Vector2(0.680178, 0.761455)
 texture = ExtResource("26_0x7qm")
 
 [node name="Riasa3" type="Sprite2D" parent="GameBackground"]
-position = Vector2(878, -837)
+position = Vector2(885.634, -768.917)
 rotation = -0.935299
 texture = ExtResource("27_2qlu0")
 
 [node name="Riasa4" type="Sprite2D" parent="GameBackground"]
-position = Vector2(1312, -143)
+position = Vector2(1319.63, -74.9165)
 rotation = -1.99358
 scale = Vector2(0.439024, -0.525774)
 texture = ExtResource("28_khlk2")
 
 [node name="Plant2" type="Sprite2D" parent="GameBackground"]
-position = Vector2(696, 978)
+position = Vector2(811, 1018)
 rotation = -2.65354
 scale = Vector2(0.466756, 0.561322)
 texture = ExtResource("22_8h65t")
 
 [node name="Riasa5" type="Sprite2D" parent="GameBackground"]
 process_priority = -4
-position = Vector2(3490, 180)
+position = Vector2(3497.63, 248.083)
 rotation = 0.474461
 texture = ExtResource("29_aexke")
 
 [node name="Rock3" type="Sprite2D" parent="GameBackground"]
-position = Vector2(581, 1494)
+position = Vector2(645, 1577)
 rotation = -3.13989
 texture = ExtResource("24_6wvtm")
 
 [node name="Plant3" type="Sprite2D" parent="GameBackground"]
-position = Vector2(1256, 465)
+position = Vector2(1263.63, 533.083)
 rotation = -0.410599
 scale = Vector2(0.263561, 0.332155)
 texture = ExtResource("22_8h65t")
 
 [node name="Rock4" type="Sprite2D" parent="GameBackground"]
-position = Vector2(810, 349)
+position = Vector2(910, 400)
 rotation = 0.982382
-scale = Vector2(0.385086, 0.508519)
+scale = Vector2(0.453504, 0.591116)
 texture = ExtResource("24_6wvtm")
 
 [node name="Rock5" type="Sprite2D" parent="GameBackground"]
-position = Vector2(964, -61.9999)
+position = Vector2(971.634, 6.0836)
 rotation = 1.47906
 scale = Vector2(0.670116, 0.641577)
 texture = ExtResource("23_dflep")
 
 [node name="Rock6" type="Sprite2D" parent="GameBackground"]
-position = Vector2(314, 900)
+position = Vector2(356, 912)
 rotation = -0.436225
 scale = Vector2(0.49931, -0.578052)
 texture = ExtResource("23_dflep")
 
 [node name="Riasa6" type="Sprite2D" parent="GameBackground"]
-position = Vector2(952, 828)
-rotation = 1.79961
+position = Vector2(1042, 892)
+rotation = 1.85342
 scale = Vector2(0.688288, 0.552998)
 texture = ExtResource("28_khlk2")
 
 [node name="Plant4" type="Sprite2D" parent="GameBackground"]
-position = Vector2(472, 46)
+position = Vector2(468, 61)
 rotation = 1.99462
 scale = Vector2(0.20341, 0.231363)
 texture = ExtResource("22_8h65t")
+
+[node name="Riasa7" type="Sprite2D" parent="GameBackground"]
+modulate = Color(1, 1, 1, 0.360784)
+z_index = -1
+position = Vector2(1892, 1159)
+rotation = 0.99057
+texture = ExtResource("25_fafxd")
+
+[node name="Plant5" type="Sprite2D" parent="GameBackground"]
+modulate = Color(1, 1, 1, 0.286275)
+z_index = -5
+position = Vector2(414, -35)
+scale = Vector2(0.493047, 0.608558)
+texture = ExtResource("22_8h65t")
+
+[node name="Riasa8" type="Sprite2D" parent="GameBackground"]
+modulate = Color(1, 1, 1, 0.25098)
+z_index = -2
+position = Vector2(-121, 756)
+rotation = -2.97781
+scale = Vector2(0.935147, 0.625685)
+texture = ExtResource("26_0x7qm")
+
+[node name="Plant6" type="Sprite2D" parent="GameBackground"]
+modulate = Color(1, 1, 1, 0.419608)
+z_index = -3
+position = Vector2(204, -154)
+rotation = 0.69708
+scale = Vector2(0.398549, 0.475647)
+texture = ExtResource("22_8h65t")
+
+[node name="Riasa9" type="Sprite2D" parent="GameBackground"]
+modulate = Color(1, 1, 1, 0.376471)
+z_index = -3
+position = Vector2(261, 985)
+rotation = 2.63796
+scale = Vector2(0.460633, 0.53176)
+texture = ExtResource("27_2qlu0")
 
 [node name="BlurLayer" type="CanvasLayer" parent="."]
 layer = 0
