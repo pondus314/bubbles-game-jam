@@ -53,6 +53,7 @@ grow_vertical = 2
 texture = ExtResource("1_x1uuu")
 
 [node name="MainMenu" type="Control" parent="GUI"]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -271,7 +272,6 @@ texture = ExtResource("7_m16uy")
 metadata/_edit_use_anchors_ = true
 
 [node name="OptionsMenu" type="Control" parent="GUI"]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -499,6 +499,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="TextureRect" type="TextureRect" parent="GUI/PauseMenu"]
+modulate = Color(1, 0.168627, 0.913725, 1)
 layout_mode = 0
 offset_left = -60.0
 offset_top = -95.0

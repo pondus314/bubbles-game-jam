@@ -73,8 +73,8 @@ func next_level():
 		load_level(next_level_name)
 	else:
 		unload_level()
-		quit_game()
-		#load_menu(MenuType.MAIN)
+		#quit_game()
+		back_to_main_menu()
 
 func start_game():
 	current_state = GameState.GAME
