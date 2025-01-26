@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://bgbimusmjex48"]
+[gd_scene load_steps=6 format=3 uid="uid://bgbimusmjex48"]
 
 [ext_resource type="Texture2D" uid="uid://cph636741ewk2" path="res://Sprites/items_spritesheet.png" id="1_a1mki"]
+[ext_resource type="Texture2D" uid="uid://iycjc2mqg8c8" path="res://Sprites/bubble_small.PNG" id="1_s4lrg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hws1t"]
 size = Vector2(170.25, 334.5)
@@ -28,38 +29,47 @@ collision_mask = 2
 position = Vector2(0, -168)
 shape = SubResource("RectangleShape2D_hws1t")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." groups=["bubbles"]]
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+amount = 50
+texture = ExtResource("1_s4lrg")
+emission_shape = 3
+emission_rect_extents = Vector2(50, 80)
+
+[node name="Node2D" type="Node2D" parent="."]
+visible = false
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node2D" groups=["bubbles"]]
 position = Vector2(3, -112)
 sprite_frames = SubResource("SpriteFrames_d6mpf")
 
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="." groups=["bubbles"]]
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Node2D" groups=["bubbles"]]
 position = Vector2(52, -133)
 sprite_frames = SubResource("SpriteFrames_d6mpf")
 
-[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="." groups=["bubbles"]]
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="Node2D" groups=["bubbles"]]
 position = Vector2(-42, -82)
 sprite_frames = SubResource("SpriteFrames_d6mpf")
 
-[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="." groups=["bubbles"]]
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="Node2D" groups=["bubbles"]]
 position = Vector2(52, -36)
 sprite_frames = SubResource("SpriteFrames_d6mpf")
 
-[node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="." groups=["bubbles"]]
+[node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="Node2D" groups=["bubbles"]]
 position = Vector2(50, -296)
 sprite_frames = SubResource("SpriteFrames_d6mpf")
 
-[node name="AnimatedSprite2D8" type="AnimatedSprite2D" parent="." groups=["bubbles"]]
+[node name="AnimatedSprite2D8" type="AnimatedSprite2D" parent="Node2D" groups=["bubbles"]]
 position = Vector2(-28, -164)
 sprite_frames = SubResource("SpriteFrames_d6mpf")
 
-[node name="AnimatedSprite2D9" type="AnimatedSprite2D" parent="." groups=["bubbles"]]
+[node name="AnimatedSprite2D9" type="AnimatedSprite2D" parent="Node2D" groups=["bubbles"]]
 position = Vector2(-8, -222)
 sprite_frames = SubResource("SpriteFrames_d6mpf")
 
-[node name="AnimatedSprite2D7" type="AnimatedSprite2D" parent="." groups=["bubbles"]]
+[node name="AnimatedSprite2D7" type="AnimatedSprite2D" parent="Node2D" groups=["bubbles"]]
 position = Vector2(-38, -285)
 sprite_frames = SubResource("SpriteFrames_d6mpf")
 
-[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="." groups=["bubbles"]]
+[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="Node2D" groups=["bubbles"]]
 position = Vector2(52, -133)
 sprite_frames = SubResource("SpriteFrames_d6mpf")
