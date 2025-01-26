@@ -13,7 +13,7 @@
 position = Vector2(10570, -1531)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_ty2c0")]
-position = Vector2(10478, -579)
+position = Vector2(118, 3)
 max_float_time = 0.5
 heavy_movement_accel = 600
 heavy_max_speed = 900.0
