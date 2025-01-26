@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://5e0xeagrb3nc"]
+[gd_scene load_steps=31 format=3 uid="uid://5e0xeagrb3nc"]
 
 [ext_resource type="Script" path="res://Scripts/GameManager.gd" id="1_gaacs"]
 [ext_resource type="Texture2D" uid="uid://cyt52w0odrtti" path="res://themes/Menu_Back.png" id="1_x1uuu"]
@@ -21,6 +21,14 @@
 [ext_resource type="Texture2D" uid="uid://dqqf47d7r78vo" path="res://themes/Unpause_button.png" id="16_p5jl6"]
 [ext_resource type="Texture2D" uid="uid://cgfmmcc18ptkj" path="res://Sprites/Outline_purple.PNG" id="20_07g66"]
 [ext_resource type="Texture2D" uid="uid://b4acgnrdhikx5" path="res://Sprites/Background_purple.PNG" id="20_8oasg"]
+[ext_resource type="Texture2D" uid="uid://5h03mmpc7b6c" path="res://Sprites/plants/Plant.PNG" id="22_8h65t"]
+[ext_resource type="Texture2D" uid="uid://dlkyxg4pe3nd6" path="res://Sprites/plants/Rock_1.PNG" id="23_dflep"]
+[ext_resource type="Texture2D" uid="uid://ppjrvf87c1yb" path="res://Sprites/plants/Rock_2.PNG" id="24_6wvtm"]
+[ext_resource type="Texture2D" uid="uid://fxek1spvjok1" path="res://Sprites/plants/Riasa_1.PNG" id="25_fafxd"]
+[ext_resource type="Texture2D" uid="uid://yo1eorpceo1q" path="res://Sprites/plants/Riasa_2.PNG" id="26_0x7qm"]
+[ext_resource type="Texture2D" uid="uid://ccn8gw1ttfpm5" path="res://Sprites/plants/Riasa_3.PNG" id="27_2qlu0"]
+[ext_resource type="Texture2D" uid="uid://bc8hlojdfpu4n" path="res://Sprites/plants/Riasa_4.PNG" id="28_khlk2"]
+[ext_resource type="Texture2D" uid="uid://cq6hw5s5uu7kd" path="res://Sprites/plants/Riasa_5.PNG" id="29_aexke"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_s2uu7"]
 
@@ -652,9 +660,10 @@ grow_vertical = 2
 
 [node name="GameBackground" type="CanvasLayer" parent="."]
 layer = -1
+visible = false
 
-[node name="TextureRect2" type="TextureRect" parent="GameBackground"]
-z_index = 1
+[node name="BG outline" type="TextureRect" parent="GameBackground"]
+z_index = 5
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -669,20 +678,115 @@ grow_vertical = 2
 scale = Vector2(0.55, 0.55)
 texture = ExtResource("20_07g66")
 
-[node name="TextureRect" type="TextureRect" parent="GameBackground"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -965.0
-offset_top = -1219.0
-offset_right = 2535.0
-offset_bottom = 1981.0
+[node name="BG main" type="TextureRect" parent="GameBackground"]
+z_index = -5
+anchors_preset = -1
+anchor_left = -0.003
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.76
+offset_top = -679.0
+offset_right = 1575.0
+offset_bottom = 1441.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.55, 0.55)
 texture = ExtResource("20_8oasg")
+
+[node name="TextureRect3" type="TextureRect" parent="GameBackground"]
+z_index = 2
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Plant" type="Sprite2D" parent="GameBackground"]
+position = Vector2(395, 1300)
+rotation = -1.59845
+texture = ExtResource("22_8h65t")
+
+[node name="Rock1" type="Sprite2D" parent="GameBackground"]
+position = Vector2(127, -764)
+rotation = 0.14561
+texture = ExtResource("23_dflep")
+
+[node name="Rock2" type="Sprite2D" parent="GameBackground"]
+position = Vector2(1400, -560)
+texture = ExtResource("24_6wvtm")
+
+[node name="Riasa1" type="Sprite2D" parent="GameBackground"]
+position = Vector2(-121, 755)
+rotation = 2.41766
+scale = Vector2(0.483573, 0.380233)
+texture = ExtResource("25_fafxd")
+
+[node name="Riasa2" type="Sprite2D" parent="GameBackground"]
+position = Vector2(1873, 145)
+rotation = 0.308932
+scale = Vector2(0.680178, 0.761455)
+texture = ExtResource("26_0x7qm")
+
+[node name="Riasa3" type="Sprite2D" parent="GameBackground"]
+position = Vector2(878, -837)
+rotation = -0.935299
+texture = ExtResource("27_2qlu0")
+
+[node name="Riasa4" type="Sprite2D" parent="GameBackground"]
+position = Vector2(1312, -143)
+rotation = -1.99358
+scale = Vector2(0.439024, -0.525774)
+texture = ExtResource("28_khlk2")
+
+[node name="Plant2" type="Sprite2D" parent="GameBackground"]
+position = Vector2(696, 978)
+rotation = -2.65354
+scale = Vector2(0.466756, 0.561322)
+texture = ExtResource("22_8h65t")
+
+[node name="Riasa5" type="Sprite2D" parent="GameBackground"]
+process_priority = -4
+position = Vector2(3490, 180)
+rotation = 0.474461
+texture = ExtResource("29_aexke")
+
+[node name="Rock3" type="Sprite2D" parent="GameBackground"]
+position = Vector2(581, 1494)
+rotation = -3.13989
+texture = ExtResource("24_6wvtm")
+
+[node name="Plant3" type="Sprite2D" parent="GameBackground"]
+position = Vector2(1256, 465)
+rotation = -0.410599
+scale = Vector2(0.263561, 0.332155)
+texture = ExtResource("22_8h65t")
+
+[node name="Rock4" type="Sprite2D" parent="GameBackground"]
+position = Vector2(810, 349)
+rotation = 0.982382
+scale = Vector2(0.385086, 0.508519)
+texture = ExtResource("24_6wvtm")
+
+[node name="Rock5" type="Sprite2D" parent="GameBackground"]
+position = Vector2(964, -61.9999)
+rotation = 1.47906
+scale = Vector2(0.670116, 0.641577)
+texture = ExtResource("23_dflep")
+
+[node name="Rock6" type="Sprite2D" parent="GameBackground"]
+position = Vector2(314, 900)
+rotation = -0.436225
+scale = Vector2(0.49931, -0.578052)
+texture = ExtResource("23_dflep")
+
+[node name="Riasa6" type="Sprite2D" parent="GameBackground"]
+position = Vector2(952, 828)
+rotation = 1.79961
+scale = Vector2(0.688288, 0.552998)
+texture = ExtResource("28_khlk2")
+
+[node name="Plant4" type="Sprite2D" parent="GameBackground"]
+position = Vector2(472, 46)
+rotation = 1.99462
+scale = Vector2(0.20341, 0.231363)
+texture = ExtResource("22_8h65t")
 
 [node name="BlurLayer" type="CanvasLayer" parent="."]
 layer = 0

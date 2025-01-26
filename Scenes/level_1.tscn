@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cp507i7fpf26g" path="res://Nodes/Pickup.tscn" id="3_33wlc"]
 [ext_resource type="PackedScene" uid="uid://bce57h8o0fg7a" path="res://Nodes/Turtle.tscn" id="3_iu3wx"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 
 [node name="CloudPickup" parent="." instance=ExtResource("3_33wlc")]
 position = Vector2(10549, -1577)
