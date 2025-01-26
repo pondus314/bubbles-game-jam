@@ -79,6 +79,8 @@ exit={
 2d_physics/layer_4="enemy turning"
 2d_physics/layer_5="spikes"
 2d_physics/layer_6="collectibles"
+2d_physics/layer_7="urchinboy"
+2d_physics/layer_8="bubbles"
 
 [rendering]
 

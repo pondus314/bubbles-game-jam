@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://js8md3mk5rhw"]
+
+[ext_resource type="Texture2D" uid="uid://cfrtdfivm3jv2" path="res://Sprites/urchin_boi.png" id="1_cqc6d"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ajyyx"]
+radius = 45.0
+height = 144.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_6y1hh"]
+radius = 59.0
+
+[node name="UrchinBoy" type="StaticBody2D" groups=["urchin_boy"]]
+collision_layer = 64
+collision_mask = 0
+
+[node name="Sprite2D" type="Sprite2D" parent="." groups=["urchin_boy"]]
+position = Vector2(8, -11)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_cqc6d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["urchin_boy"]]
+shape = SubResource("CapsuleShape2D_ajyyx")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="." groups=["urchin_boy"]]
+position = Vector2(-2, -32)
+shape = SubResource("CircleShape2D_6y1hh")

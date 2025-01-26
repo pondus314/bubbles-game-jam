@@ -28,12 +28,15 @@ var jump_state = JumpState.FALLING
 var float_left: float
 var extra_weight = 0.0
 var deflation_queued = false
+var in_bubbles_counter = 0
 @onready var main_sprite:AnimatedSprite2D = $MainSprite
 @onready var collider: Area2D = $Collider
 
 func _ready() -> void:
 	Global.player = self
-	self.collider.body_entered.connect(func(_body): on_death(""))
+	self.collider.body_entered.connect(func(body): collision_detected(body))
+	self.collider.area_entered.connect(func(area: Area2D): in_bubbles_counter+=1 if area.is_in_group("bubbles") else 1)
+	self.collider.area_exited.connect(func(area: Area2D): in_bubbles_counter-=1 if area.is_in_group("bubbles") else 1)
 	float_left = max_float_time*(1-extra_weight)
 
 func _physics_process(delta: float) -> void:
@@ -64,6 +67,9 @@ func _physics_process(delta: float) -> void:
 	if extra_weight > 0.001:
 		velocity.y += gravity * delta * heavy_gravity_multiplier
 	else:
+		if in_bubbles_counter > 0: 
+			print("in bubbles")
+			gravity = -1300
 		velocity.y += gravity * delta
 
 	if jump_state == JumpState.FLOATING:
@@ -120,7 +126,6 @@ func handle_jump():
 	if jump_state == JumpState.FLOATING:
 		if stop_float or float_left < 0.0:
 			jump_state = JumpState.FALLING
-			print("baa")
 			if main_sprite.animation == "inflating": 
 				print("queueing deflation")
 				deflation_queued = true
@@ -150,3 +155,12 @@ func _on_main_sprite_animation_finished():
 	else:
 		main_sprite.play("idle")
 	
+func collision_detected(body: Node2D):
+	print("entered body")
+	if body.is_in_group("enemies") or body is TileMapLayer:
+		on_death("")
+	elif body.is_in_group("urchin_boy"):
+		if extra_weight > 0.9: 
+			Global.main_scene.finish_level()
+		else:
+			on_death("")
