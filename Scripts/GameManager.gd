@@ -78,9 +78,13 @@ func next_level():
 
 func start_game():
 	current_state = GameState.GAME
+<<<<<<< Updated upstream
 	var level_name = "level_%s" % Global.level_counter 
 
 	load_level(level_name)
+=======
+	load_level("level_3")
+>>>>>>> Stashed changes
 	unpause_game()
 
 func pause_game() -> void:
