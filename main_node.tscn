@@ -33,7 +33,7 @@ script = ExtResource("1_gaacs")
 
 [node name="GUI" type="CanvasLayer" parent="."]
 
-[node name="BackgroundColor" type="TextureRect" parent="GUI"]
+[node name="BackgroundArt" type="TextureRect" parent="GUI"]
 modulate = Color(0.456735, 0.930367, 0.7182, 1)
 anchors_preset = 15
 anchor_right = 1.0
@@ -42,7 +42,8 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_x1uuu")
 
-[node name="Menu" type="Control" parent="GUI"]
+[node name="MainMenu" type="Control" parent="GUI"]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -50,7 +51,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="GUI/Menu"]
+[node name="VBoxContainer" type="VBoxContainer" parent="GUI/MainMenu"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -58,14 +59,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="GameName" type="TextureRect" parent="GUI/Menu/VBoxContainer"]
+[node name="GameName" type="TextureRect" parent="GUI/MainMenu/VBoxContainer"]
 custom_minimum_size = Vector2(0, 500)
 layout_mode = 2
 size_flags_vertical = 0
 expand_mode = 3
 stretch_mode = 3
 
-[node name="Control" type="Control" parent="GUI/Menu/VBoxContainer/GameName"]
+[node name="Control" type="Control" parent="GUI/MainMenu/VBoxContainer/GameName"]
 layout_mode = 2
 anchors_preset = 0
 offset_left = 960.0
@@ -73,7 +74,7 @@ offset_top = 250.0
 offset_right = 960.0
 offset_bottom = 250.0
 
-[node name="TextureRect" type="TextureRect" parent="GUI/Menu/VBoxContainer/GameName/Control"]
+[node name="TextureRect" type="TextureRect" parent="GUI/MainMenu/VBoxContainer/GameName/Control"]
 custom_minimum_size = Vector2(1600, 0)
 layout_mode = 2
 offset_left = -193.0
@@ -87,26 +88,17 @@ texture = ExtResource("3_01k0h")
 expand_mode = 5
 stretch_mode = 5
 
-[node name="InfoLabel" type="Label" parent="GUI/Menu/VBoxContainer"]
-visible = false
-custom_minimum_size = Vector2(0, 400)
-layout_mode = 2
-size_flags_horizontal = 4
-theme_override_font_sizes/font_size = 75
-text = "Game name goes here"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="VBoxContainer" type="VBoxContainer" parent="GUI/Menu/VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="GUI/MainMenu/VBoxContainer"]
+z_index = 2
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/separation = 20
 
-[node name="PlayButtonHolder" type="Control" parent="GUI/Menu/VBoxContainer/VBoxContainer"]
+[node name="PlayButtonHolder" type="Control" parent="GUI/MainMenu/VBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(650, 145)
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="GUI/Menu/VBoxContainer/VBoxContainer/PlayButtonHolder"]
+[node name="TextureRect" type="TextureRect" parent="GUI/MainMenu/VBoxContainer/VBoxContainer/PlayButtonHolder"]
 modulate = Color(1, 0.894118, 0.960784, 1)
 custom_minimum_size = Vector2(0, 200)
 layout_mode = 1
@@ -122,7 +114,7 @@ offset_bottom = -361.965
 texture = ExtResource("2_f8giw")
 expand_mode = 1
 
-[node name="Button" type="Button" parent="GUI/Menu/VBoxContainer/VBoxContainer/PlayButtonHolder"]
+[node name="Button" type="Button" parent="GUI/MainMenu/VBoxContainer/VBoxContainer/PlayButtonHolder"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.155
@@ -144,11 +136,11 @@ theme_override_font_sizes/font_size = 60
 flat = true
 icon_alignment = 1
 
-[node name="OptionsButtonHolder" type="Control" parent="GUI/Menu/VBoxContainer/VBoxContainer"]
+[node name="OptionsButtonHolder" type="Control" parent="GUI/MainMenu/VBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(650, 145)
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="GUI/Menu/VBoxContainer/VBoxContainer/OptionsButtonHolder"]
+[node name="TextureRect" type="TextureRect" parent="GUI/MainMenu/VBoxContainer/VBoxContainer/OptionsButtonHolder"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.046
@@ -163,7 +155,7 @@ rotation = 0.383269
 texture = ExtResource("3_rqvrp")
 expand_mode = 1
 
-[node name="Button" type="Button" parent="GUI/Menu/VBoxContainer/VBoxContainer/OptionsButtonHolder"]
+[node name="Button" type="Button" parent="GUI/MainMenu/VBoxContainer/VBoxContainer/OptionsButtonHolder"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.162
@@ -189,12 +181,11 @@ text = "
 flat = true
 icon_alignment = 1
 
-[node name="QuitButtonHolder" type="Control" parent="GUI/Menu/VBoxContainer/VBoxContainer"]
-visible = false
+[node name="QuitButtonHolder" type="Control" parent="GUI/MainMenu/VBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(650, 145)
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="GUI/Menu/VBoxContainer/VBoxContainer/QuitButtonHolder"]
+[node name="TextureRect" type="TextureRect" parent="GUI/MainMenu/VBoxContainer/VBoxContainer/QuitButtonHolder"]
 modulate = Color(0.982343, 0.982342, 0.982342, 1)
 layout_mode = 0
 offset_left = 283.0
@@ -204,7 +195,7 @@ offset_bottom = 230.0
 texture = ExtResource("4_3oo7m")
 expand_mode = 1
 
-[node name="Button" type="Button" parent="GUI/Menu/VBoxContainer/VBoxContainer/QuitButtonHolder"]
+[node name="Button" type="Button" parent="GUI/MainMenu/VBoxContainer/VBoxContainer/QuitButtonHolder"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.118
@@ -226,38 +217,51 @@ theme_override_font_sizes/font_size = 60
 flat = true
 icon_alignment = 1
 
-[node name="Menu art" type="Control" parent="GUI"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Menu art" type="Control" parent="GUI/MainMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 
-[node name="TextureRect" type="TextureRect" parent="GUI/Menu art"]
+[node name="TextureRect2" type="TextureRect" parent="GUI/MainMenu/Menu art"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 10.537
-anchor_top = 19.61
-anchor_right = 10.537
-anchor_bottom = 19.61
-offset_left = -315.48
-offset_top = -585.4
-offset_right = 853.52
-offset_bottom = 241.6
-rotation = 0.430059
-texture = ExtResource("7_m16uy")
-
-[node name="TextureRect2" type="TextureRect" parent="GUI/Menu art"]
-layout_mode = 0
-offset_left = 1346.0
-offset_top = 44.0
-offset_right = 2515.0
-offset_bottom = 871.0
+anchor_left = 0.577
+anchor_top = 0.402
+anchor_right = 0.936
+anchor_bottom = 0.762
+offset_left = 227.16
+offset_top = -403.66
+offset_right = 706.88
+offset_bottom = 34.54
+grow_horizontal = 0
+grow_vertical = 2
 rotation = 0.803448
 scale = Vector2(0.81617, 0.831201)
+mouse_filter = 2
 texture = ExtResource("8_4xjqq")
 
+[node name="TextureRect" type="TextureRect" parent="GUI/MainMenu/Menu art"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.004
+anchor_top = 0.567
+anchor_right = 0.425
+anchor_bottom = 0.995
+offset_left = 143.163
+offset_top = -423.419
+offset_right = 503.843
+offset_bottom = -58.6594
+grow_vertical = 0
+rotation = 0.430059
+mouse_filter = 2
+texture = ExtResource("7_m16uy")
+metadata/_edit_use_anchors_ = true
+
 [node name="OptionsMenu" type="Control" parent="GUI"]
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
@@ -424,7 +428,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="GUI/LevelSelect"]
-visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -478,14 +481,13 @@ text = "Back to Main Menu"
 flat = true
 icon_alignment = 1
 
-[node name="Pause" type="Control" parent="GUI"]
-visible = false
+[node name="PauseMenu" type="Control" parent="GUI"]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="TextureRect" type="TextureRect" parent="GUI/Pause"]
+[node name="TextureRect" type="TextureRect" parent="GUI/PauseMenu"]
 layout_mode = 0
 offset_left = -60.0
 offset_top = -95.0
@@ -494,15 +496,16 @@ offset_bottom = 732.0
 scale = Vector2(1.7118, 1.57796)
 texture = ExtResource("15_otyub")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="GUI/Pause"]
+[node name="VBoxContainer" type="VBoxContainer" parent="GUI/PauseMenu"]
+layout_mode = 0
 size_flags_horizontal = 4
 theme_override_constants/separation = 20
 
-[node name="Unpausebuttonholder" type="Control" parent="GUI/Pause/VBoxContainer"]
+[node name="Unpausebuttonholder" type="Control" parent="GUI/PauseMenu/VBoxContainer"]
 custom_minimum_size = Vector2(650, 145)
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="GUI/Pause/VBoxContainer/Unpausebuttonholder"]
+[node name="TextureRect" type="TextureRect" parent="GUI/PauseMenu/VBoxContainer/Unpausebuttonholder"]
 modulate = Color(1, 0.894118, 0.960784, 1)
 custom_minimum_size = Vector2(0, 200)
 layout_mode = 1
@@ -519,7 +522,7 @@ scale = Vector2(1.524, 1.55875)
 texture = ExtResource("16_p5jl6")
 expand_mode = 1
 
-[node name="Button" type="Button" parent="GUI/Pause/VBoxContainer/Unpausebuttonholder"]
+[node name="Button" type="Button" parent="GUI/PauseMenu/VBoxContainer/Unpausebuttonholder"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.155
@@ -542,11 +545,11 @@ theme_override_font_sizes/font_size = 60
 flat = true
 icon_alignment = 1
 
-[node name="OptionsButtonHolder" type="Control" parent="GUI/Pause/VBoxContainer"]
+[node name="OptionsButtonHolder" type="Control" parent="GUI/PauseMenu/VBoxContainer"]
 custom_minimum_size = Vector2(650, 145)
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="GUI/Pause/VBoxContainer/OptionsButtonHolder"]
+[node name="TextureRect" type="TextureRect" parent="GUI/PauseMenu/VBoxContainer/OptionsButtonHolder"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = -0.046
@@ -562,7 +565,7 @@ scale = Vector2(1.49234, 1.52821)
 texture = ExtResource("8_wk20o")
 expand_mode = 1
 
-[node name="Button" type="Button" parent="GUI/Pause/VBoxContainer/OptionsButtonHolder"]
+[node name="Button" type="Button" parent="GUI/PauseMenu/VBoxContainer/OptionsButtonHolder"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.162
@@ -605,6 +608,11 @@ offset_bottom = 120.0
 size_flags_horizontal = 2
 size_flags_vertical = 2
 
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="HUD/Bubble Girl UI"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
 [node name="Bubblegirl_UI_Head" type="TextureRect" parent="HUD/Bubble Girl UI"]
 layout_mode = 1
 anchors_preset = -1
@@ -619,33 +627,18 @@ offset_bottom = 721.04
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("9_2l04y")
 
-[node name="STAMINAin" type="TextureRect" parent="HUD/Bubble Girl UI"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.345
-anchor_top = -0.633
-anchor_right = 0.937
-anchor_bottom = 2.242
-offset_left = -1.52588e-05
-offset_top = -0.0400009
-offset_right = 1064.8
-offset_bottom = 1034.96
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("10_dbs2x")
-
-[node name="STAMINAout" type="TextureRect" parent="HUD/Bubble Girl UI"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.342
-anchor_top = -0.683
-anchor_right = 0.94
-anchor_bottom = 2.292
-offset_left = -0.200012
-offset_top = -0.0399933
-offset_right = 1077.0
-offset_bottom = 1070.96
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("11_tlqck")
+[node name="TextureProgressBar" type="TextureProgressBar" parent="HUD/Bubble Girl UI"]
+layout_mode = 0
+offset_left = 203.0
+offset_top = -84.0
+offset_right = 565.0
+offset_bottom = 276.0
+max_value = 1.0
+step = 0.02
+value = 1.0
+nine_patch_stretch = true
+texture_over = ExtResource("11_tlqck")
+texture_progress = ExtResource("10_dbs2x")
 
 [node name="Game" type="Control" parent="."]
 process_mode = 1
@@ -679,12 +672,10 @@ autoplay = true
 [node name="StorkWarningPlayer" type="AudioStreamPlayer" parent="GlobalSounds"]
 process_mode = 3
 
-[connection signal="pressed" from="GUI/Menu/VBoxContainer/VBoxContainer/PlayButtonHolder/Button" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="GUI/Menu/VBoxContainer/VBoxContainer/OptionsButtonHolder/Button" to="." method="_on_options_button_pressed"]
-[connection signal="pressed" from="GUI/Menu/VBoxContainer/VBoxContainer/QuitButtonHolder/Button" to="." method="_on_quit_button_pressed"]
-[connection signal="pressed" from="GUI/OptionsMenu/VBoxContainer/SFXButtonHolder/Button" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="GUI/OptionsMenu/VBoxContainer/MusicButtonHolder/Button" to="." method="_on_options_button_pressed"]
-[connection signal="pressed" from="GUI/OptionsMenu/VBoxContainer/QuitButtonHolder/Button" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="GUI/MainMenu/VBoxContainer/VBoxContainer/PlayButtonHolder/Button" to="." method="on_play_button_pressed"]
+[connection signal="pressed" from="GUI/MainMenu/VBoxContainer/VBoxContainer/OptionsButtonHolder/Button" to="." method="open_options"]
+[connection signal="pressed" from="GUI/MainMenu/VBoxContainer/VBoxContainer/QuitButtonHolder/Button" to="." method="quit_game"]
+[connection signal="pressed" from="GUI/OptionsMenu/VBoxContainer/QuitButtonHolder/Button" to="." method="exit_options"]
 [connection signal="pressed" from="GUI/LevelSelect/VBoxContainer/QuitLevelSelectButton/Button" to="." method="_on_quit_button_pressed"]
-[connection signal="pressed" from="GUI/Pause/VBoxContainer/Unpausebuttonholder/Button" to="." method="_on_play_button_pressed"]
-[connection signal="pressed" from="GUI/Pause/VBoxContainer/OptionsButtonHolder/Button" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="GUI/PauseMenu/VBoxContainer/Unpausebuttonholder/Button" to="." method="unpause_game"]
+[connection signal="pressed" from="GUI/PauseMenu/VBoxContainer/OptionsButtonHolder/Button" to="." method="back_to_main_menu"]
