@@ -130,7 +130,7 @@ func on_death(message: String) -> void:
 
 func on_pickup_collect(weight_gained):
 	self.extra_weight += weight_gained
-  float_left = clamp(float_left, 0, max_float_time*(1-extra_weight))
+	float_left = clamp(float_left, 0, max_float_time*(1-extra_weight))
 
 func _on_main_sprite_animation_finished():
 	if jump_state == JumpState.FLOATING:
