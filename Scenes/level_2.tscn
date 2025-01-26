@@ -8,7 +8,7 @@
 [node name="Node2D2" type="Node2D"]
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_2l6s5")]
-position = Vector2(10892, -206)
+position = Vector2(336, -307)
 max_float_time = 0.5
 heavy_movement_accel = 600
 heavy_max_speed = 900.0

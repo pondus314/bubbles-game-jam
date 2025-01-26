@@ -94,14 +94,12 @@ func pause_game() -> void:
 	
 
 func unpause_game() -> void:
-	print("beeee")
 	get_tree().paused = false
 	game_paused = false
 	main_scene.show()
 	hud.show()
 	gui.hide()
 	current_state = GameState.GAME
-	print("unpausing game")
 
 func quit_game() -> void:
 	get_tree().quit()

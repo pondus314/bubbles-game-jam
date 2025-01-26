@@ -27,7 +27,7 @@ var time_since_float = 0
 var jump_state = JumpState.FALLING
 var float_left: float
 var extra_weight = 0.0
-
+var deflation_queued = false
 @onready var main_sprite:AnimatedSprite2D = $MainSprite
 @onready var collider: Area2D = $Collider
 
@@ -120,7 +120,14 @@ func handle_jump():
 	if jump_state == JumpState.FLOATING:
 		if stop_float or float_left < 0.0:
 			jump_state = JumpState.FALLING
-			
+			print("baa")
+			if main_sprite.animation == "inflating": 
+				print("queueing deflation")
+				deflation_queued = true
+			else:
+				print("playing deflation")
+				main_sprite.play("inflating", 0.5, true)
+
 			
 
 
@@ -133,12 +140,13 @@ func on_pickup_collect(weight_gained):
 	float_left = clamp(float_left, 0, max_float_time*(1-extra_weight))
 
 func _on_main_sprite_animation_finished():
+	print(main_sprite.animation)
 	if jump_state == JumpState.FLOATING:
 		main_sprite.play("looping")
-		
-	if jump_state == JumpState.FALLING:
-		main_sprite.play("inflating", 0.5, true)
+	elif deflation_queued:
+		main_sprite.play("inflating", -1, true)
+		deflation_queued = false
+		print("playing deflation")
 	else:
-		main_sprite.stop()
+		main_sprite.play("idle")
 	
-	pass 

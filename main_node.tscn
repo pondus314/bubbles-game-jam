@@ -608,11 +608,6 @@ offset_bottom = 120.0
 size_flags_horizontal = 2
 size_flags_vertical = 2
 
-[node name="AspectRatioContainer" type="AspectRatioContainer" parent="HUD/Bubble Girl UI"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
 [node name="Bubblegirl_UI_Head" type="TextureRect" parent="HUD/Bubble Girl UI"]
 layout_mode = 1
 anchors_preset = -1
