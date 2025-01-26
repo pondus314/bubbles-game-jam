@@ -1,27 +1,19 @@
-[gd_scene load_steps=6 format=3 uid="uid://cp507i7fpf26g"]
+[gd_scene load_steps=5 format=3 uid="uid://cp507i7fpf26g"]
 
 [ext_resource type="Script" path="res://Scripts/Pickup.gd" id="1_4iopm"]
-[ext_resource type="Texture2D" uid="uid://cph636741ewk2" path="res://Sprites/items_spritesheet.png" id="1_gqtkb"]
+[ext_resource type="Texture2D" uid="uid://chfua3vww84br" path="res://Sprites/brine_cloud.png" id="2_aqbfw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_xf6eo"]
 radius = 31.7219
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_cjio1"]
-atlas = ExtResource("1_gqtkb")
-region = Rect2(505, 290, 70, 70)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_xiu8x"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_cjio1")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
+[sub_resource type="Curve2D" id="Curve2D_irk0q"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 0, -8, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8)
+}
+point_count = 3
 
 [node name="CloudPickup" type="Area2D"]
+scale = Vector2(2, 2)
 collision_layer = 32
 collision_mask = 2
 script = ExtResource("1_4iopm")
@@ -29,6 +21,13 @@ script = ExtResource("1_4iopm")
 [node name="CollisionShape" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_xf6eo")
 
-[node name="Sprite" type="AnimatedSprite2D" parent="."]
-scale = Vector2(1.8, 1.8)
-sprite_frames = SubResource("SpriteFrames_xiu8x")
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_irk0q")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(0, -8)
+rotates = false
+
+[node name="Sprite" type="Sprite2D" parent="Path2D/PathFollow2D"]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_aqbfw")

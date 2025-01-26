@@ -660,7 +660,6 @@ grow_vertical = 2
 
 [node name="GameBackground" type="CanvasLayer" parent="."]
 layer = -1
-visible = false
 
 [node name="BG outline" type="TextureRect" parent="GameBackground"]
 z_index = 5

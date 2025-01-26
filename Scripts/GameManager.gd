@@ -79,7 +79,9 @@ func next_level():
 
 func start_game():
 	current_state = GameState.GAME
-	load_level("level_2")
+	var level_name = "level_%s" % Global.level_counter 
+
+	load_level(level_name)
 	unpause_game()
 
 func pause_game() -> void:
@@ -143,4 +145,3 @@ func on_escape_pressed() -> void:
 		unpause_game()
 	elif current_state == GameState.GAME:
 		pause_game()
-	

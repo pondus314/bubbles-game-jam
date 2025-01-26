@@ -8,10 +8,10 @@
 [node name="Node2D2" type="Node2D"]
 
 [node name="CloudPickup" parent="." instance=ExtResource("3_33wlc")]
-position = Vector2(10549, -1577)
+position = Vector2(10570, -1531)
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_ty2c0")]
-position = Vector2(338, -26)
+position = Vector2(219, -57)
 max_float_time = 0.5
 heavy_movement_accel = 600
 heavy_max_speed = 900.0
