@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://js8md3mk5rhw"]
 
-[ext_resource type="Texture2D" uid="uid://cfrtdfivm3jv2" path="res://Sprites/urchin_boi.png" id="1_cqc6d"]
+[ext_resource type="Texture2D" uid="uid://dsqen81fbjvjq" path="res://Sprites/urchin boi 2.png" id="1_lmjia"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ajyyx"]
 radius = 45.0
@@ -16,7 +16,7 @@ collision_mask = 0
 [node name="Sprite2D" type="Sprite2D" parent="." groups=["urchin_boy"]]
 position = Vector2(8, -11)
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("1_cqc6d")
+texture = ExtResource("1_lmjia")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["urchin_boy"]]
 shape = SubResource("CapsuleShape2D_ajyyx")

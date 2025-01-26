@@ -1,34 +1,34 @@
 [gd_scene load_steps=31 format=3 uid="uid://5e0xeagrb3nc"]
 
-[ext_resource type="Script" path="res://Scripts/GameManager.gd" id="1_gaacs"]
-[ext_resource type="Texture2D" uid="uid://cyt52w0odrtti" path="res://themes/Menu_Back.png" id="1_x1uuu"]
-[ext_resource type="Texture2D" uid="uid://dqb026nocusjp" path="res://themes/Play_game_menu_button.png" id="2_f8giw"]
-[ext_resource type="Texture2D" uid="uid://y3bsiocugy2y" path="res://themes/Menu_title.png" id="3_01k0h"]
-[ext_resource type="Texture2D" uid="uid://6s8qevcpf10a" path="res://themes/Options_menu_button.png" id="3_rqvrp"]
-[ext_resource type="Texture2D" uid="uid://kduttwt8bu70" path="res://themes/Exit_game_menu_button.png" id="4_3oo7m"]
-[ext_resource type="Texture2D" uid="uid://dws3vbbld025m" path="res://themes/Options_screen.png" id="5_k4r6k"]
-[ext_resource type="Texture2D" uid="uid://coirmap8ed5uk" path="res://themes/Options_SFX_On.png" id="6_k1v0u"]
-[ext_resource type="Texture2D" uid="uid://davlegjakyxct" path="res://themes/Options_Music_On.png" id="7_4rqdw"]
-[ext_resource type="Texture2D" uid="uid://bmtk6a1l8xd25" path="res://themes/Bubblegirl_menu_splash.png" id="7_m16uy"]
-[ext_resource type="Texture2D" uid="uid://bq0rmyn1s08eg" path="res://themes/Urchinboy_menu_splash.png" id="8_4xjqq"]
-[ext_resource type="Texture2D" uid="uid://co1nw76pctcmy" path="res://themes/BTM_Options_button.png" id="8_wk20o"]
-[ext_resource type="Texture2D" uid="uid://da0cpgyyjeoer" path="res://themes/Bubblegirl_Neutral.png" id="9_2l04y"]
-[ext_resource type="Texture2D" uid="uid://b0raqomjxk4no" path="res://themes/Stamina_inside.png" id="10_dbs2x"]
-[ext_resource type="Texture2D" uid="uid://cienxuffabepb" path="res://themes/Options_SFX_Off.png" id="11_j14q1"]
-[ext_resource type="Texture2D" uid="uid://b71okcrmegm0l" path="res://themes/Stamina_outside.png" id="11_tlqck"]
-[ext_resource type="Texture2D" uid="uid://cfykbl5fu8pag" path="res://themes/Options_Music_Off.png" id="13_evq52"]
-[ext_resource type="Texture2D" uid="uid://dke1xeuce5utm" path="res://themes/Pause_screen.png" id="15_otyub"]
-[ext_resource type="Texture2D" uid="uid://dqqf47d7r78vo" path="res://themes/Unpause_button.png" id="16_p5jl6"]
-[ext_resource type="Texture2D" uid="uid://cgfmmcc18ptkj" path="res://Sprites/Outline_purple.PNG" id="20_07g66"]
-[ext_resource type="Texture2D" uid="uid://b4acgnrdhikx5" path="res://Sprites/Background_purple.PNG" id="20_8oasg"]
-[ext_resource type="Texture2D" uid="uid://5h03mmpc7b6c" path="res://Sprites/plants/Plant.PNG" id="22_8h65t"]
-[ext_resource type="Texture2D" uid="uid://dlkyxg4pe3nd6" path="res://Sprites/plants/Rock_1.PNG" id="23_dflep"]
-[ext_resource type="Texture2D" uid="uid://ppjrvf87c1yb" path="res://Sprites/plants/Rock_2.PNG" id="24_6wvtm"]
-[ext_resource type="Texture2D" uid="uid://fxek1spvjok1" path="res://Sprites/plants/Riasa_1.PNG" id="25_fafxd"]
-[ext_resource type="Texture2D" uid="uid://yo1eorpceo1q" path="res://Sprites/plants/Riasa_2.PNG" id="26_0x7qm"]
-[ext_resource type="Texture2D" uid="uid://ccn8gw1ttfpm5" path="res://Sprites/plants/Riasa_3.PNG" id="27_2qlu0"]
-[ext_resource type="Texture2D" uid="uid://bc8hlojdfpu4n" path="res://Sprites/plants/Riasa_4.PNG" id="28_khlk2"]
-[ext_resource type="Texture2D" uid="uid://cq6hw5s5uu7kd" path="res://Sprites/plants/Riasa_5.PNG" id="29_aexke"]
+[ext_resource type="Script" path="res://Scripts/GameManager.gd" id="1_pk5y1"]
+[ext_resource type="Texture2D" uid="uid://cyt52w0odrtti" path="res://themes/Menu_Back.png" id="2_436n1"]
+[ext_resource type="Texture2D" uid="uid://y3bsiocugy2y" path="res://themes/Menu_title.png" id="3_rt8a1"]
+[ext_resource type="Texture2D" uid="uid://dqb026nocusjp" path="res://themes/Play_game_menu_button.png" id="4_ua8wk"]
+[ext_resource type="Texture2D" uid="uid://6s8qevcpf10a" path="res://themes/Options_menu_button.png" id="5_ffruh"]
+[ext_resource type="Texture2D" uid="uid://kduttwt8bu70" path="res://themes/Exit_game_menu_button.png" id="6_k6yxv"]
+[ext_resource type="Texture2D" uid="uid://bq0rmyn1s08eg" path="res://themes/Urchinboy_menu_splash.png" id="7_5gfc1"]
+[ext_resource type="Texture2D" uid="uid://bmtk6a1l8xd25" path="res://themes/Bubblegirl_menu_splash.png" id="8_okgb2"]
+[ext_resource type="Texture2D" uid="uid://dws3vbbld025m" path="res://themes/Options_screen.png" id="9_130uc"]
+[ext_resource type="Texture2D" uid="uid://coirmap8ed5uk" path="res://themes/Options_SFX_On.png" id="10_72bp2"]
+[ext_resource type="Texture2D" uid="uid://cienxuffabepb" path="res://themes/Options_SFX_Off.png" id="11_o2mf3"]
+[ext_resource type="Texture2D" uid="uid://davlegjakyxct" path="res://themes/Options_Music_On.png" id="12_x8opc"]
+[ext_resource type="Texture2D" uid="uid://cfykbl5fu8pag" path="res://themes/Options_Music_Off.png" id="13_7s43i"]
+[ext_resource type="Texture2D" uid="uid://co1nw76pctcmy" path="res://themes/BTM_Options_button.png" id="14_6yos2"]
+[ext_resource type="Texture2D" uid="uid://dke1xeuce5utm" path="res://themes/Pause_screen.png" id="15_kk647"]
+[ext_resource type="Texture2D" uid="uid://dqqf47d7r78vo" path="res://themes/Unpause_button.png" id="16_ll5m4"]
+[ext_resource type="Texture2D" uid="uid://da0cpgyyjeoer" path="res://themes/Bubblegirl_Neutral.png" id="17_q32bf"]
+[ext_resource type="Texture2D" uid="uid://b71okcrmegm0l" path="res://themes/Stamina_outside.png" id="18_6i5js"]
+[ext_resource type="Texture2D" uid="uid://b0raqomjxk4no" path="res://themes/Stamina_inside.png" id="19_3p785"]
+[ext_resource type="Texture2D" uid="uid://cgfmmcc18ptkj" path="res://Sprites/Outline_purple.PNG" id="20_xahq0"]
+[ext_resource type="Texture2D" uid="uid://b4acgnrdhikx5" path="res://Sprites/Background_purple.PNG" id="21_7njh5"]
+[ext_resource type="Texture2D" uid="uid://5h03mmpc7b6c" path="res://Sprites/plants/Plant.PNG" id="22_03q10"]
+[ext_resource type="Texture2D" uid="uid://dlkyxg4pe3nd6" path="res://Sprites/plants/Rock_1.PNG" id="23_x2cf8"]
+[ext_resource type="Texture2D" uid="uid://ppjrvf87c1yb" path="res://Sprites/plants/Rock_2.PNG" id="24_uo4h4"]
+[ext_resource type="Texture2D" uid="uid://fxek1spvjok1" path="res://Sprites/plants/Riasa_1.PNG" id="25_7k4ht"]
+[ext_resource type="Texture2D" uid="uid://yo1eorpceo1q" path="res://Sprites/plants/Riasa_2.PNG" id="26_f23vq"]
+[ext_resource type="Texture2D" uid="uid://ccn8gw1ttfpm5" path="res://Sprites/plants/Riasa_3.PNG" id="27_8yvq5"]
+[ext_resource type="Texture2D" uid="uid://bc8hlojdfpu4n" path="res://Sprites/plants/Riasa_4.PNG" id="28_51odv"]
+[ext_resource type="Texture2D" uid="uid://cq6hw5s5uu7kd" path="res://Sprites/plants/Riasa_5.PNG" id="29_soeof"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_s2uu7"]
 
@@ -39,7 +39,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_gaacs")
+script = ExtResource("1_pk5y1")
 
 [node name="GUI" type="CanvasLayer" parent="."]
 
@@ -50,7 +50,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_x1uuu")
+texture = ExtResource("2_436n1")
 
 [node name="MainMenu" type="Control" parent="GUI"]
 visible = false
@@ -94,7 +94,7 @@ offset_bottom = 462.111
 rotation = 0.312414
 scale = Vector2(0.45, 0.45)
 pivot_offset = Vector2(800, 128)
-texture = ExtResource("3_01k0h")
+texture = ExtResource("3_rt8a1")
 expand_mode = 5
 stretch_mode = 5
 
@@ -121,7 +121,7 @@ offset_left = -352.9
 offset_top = -362.01
 offset_right = -352.9
 offset_bottom = -361.965
-texture = ExtResource("2_f8giw")
+texture = ExtResource("4_ua8wk")
 expand_mode = 1
 
 [node name="Button" type="Button" parent="GUI/MainMenu/VBoxContainer/VBoxContainer/PlayButtonHolder"]
@@ -162,7 +162,7 @@ offset_top = -282.94
 offset_right = 694.9
 offset_bottom = 117.06
 rotation = 0.383269
-texture = ExtResource("3_rqvrp")
+texture = ExtResource("5_ffruh")
 expand_mode = 1
 
 [node name="Button" type="Button" parent="GUI/MainMenu/VBoxContainer/VBoxContainer/OptionsButtonHolder"]
@@ -202,7 +202,7 @@ offset_left = 283.0
 offset_top = 30.0
 offset_right = 903.0
 offset_bottom = 230.0
-texture = ExtResource("4_3oo7m")
+texture = ExtResource("6_k6yxv")
 expand_mode = 1
 
 [node name="Button" type="Button" parent="GUI/MainMenu/VBoxContainer/VBoxContainer/QuitButtonHolder"]
@@ -252,7 +252,7 @@ grow_vertical = 2
 rotation = 0.803448
 scale = Vector2(0.81617, 0.831201)
 mouse_filter = 2
-texture = ExtResource("8_4xjqq")
+texture = ExtResource("7_5gfc1")
 
 [node name="TextureRect" type="TextureRect" parent="GUI/MainMenu/Menu art"]
 layout_mode = 1
@@ -268,7 +268,7 @@ offset_bottom = -58.6594
 grow_vertical = 0
 rotation = 0.430059
 mouse_filter = 2
-texture = ExtResource("7_m16uy")
+texture = ExtResource("8_okgb2")
 metadata/_edit_use_anchors_ = true
 
 [node name="OptionsMenu" type="Control" parent="GUI"]
@@ -285,7 +285,7 @@ anchor_top = -0.5
 anchor_right = 49.275
 anchor_bottom = 27.625
 offset_right = 0.00195313
-texture = ExtResource("5_k4r6k")
+texture = ExtResource("9_130uc")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="GUI/OptionsMenu"]
 layout_mode = 0
@@ -305,7 +305,7 @@ offset_left = 312.0
 offset_top = 135.0
 offset_right = 874.0
 offset_bottom = 509.0
-texture = ExtResource("6_k1v0u")
+texture = ExtResource("10_72bp2")
 expand_mode = 1
 
 [node name="TextureRect2" type="TextureRect" parent="GUI/OptionsMenu/VBoxContainer/SFXButtonHolder"]
@@ -316,7 +316,7 @@ offset_top = 140.0
 offset_right = 1015.0
 offset_bottom = 640.0
 scale = Vector2(0.799847, 0.735634)
-texture = ExtResource("11_j14q1")
+texture = ExtResource("11_o2mf3")
 
 [node name="Button" type="Button" parent="GUI/OptionsMenu/VBoxContainer/SFXButtonHolder"]
 layout_mode = 1
@@ -355,7 +355,7 @@ offset_left = 490.9
 offset_top = 430.06
 offset_right = 1032.9
 offset_bottom = 797.06
-texture = ExtResource("7_4rqdw")
+texture = ExtResource("12_x8opc")
 expand_mode = 1
 
 [node name="TextureRect2" type="TextureRect" parent="GUI/OptionsMenu/VBoxContainer/MusicButtonHolder"]
@@ -366,7 +366,7 @@ offset_top = 309.0
 offset_right = 1164.0
 offset_bottom = 809.0
 scale = Vector2(0.762794, 0.732399)
-texture = ExtResource("13_evq52")
+texture = ExtResource("13_7s43i")
 
 [node name="Button" type="Button" parent="GUI/OptionsMenu/VBoxContainer/MusicButtonHolder"]
 layout_mode = 1
@@ -403,7 +403,7 @@ offset_left = 797.0
 offset_top = -21.0
 offset_right = 1777.0
 offset_bottom = 651.0
-texture = ExtResource("8_wk20o")
+texture = ExtResource("14_6yos2")
 expand_mode = 1
 
 [node name="Button" type="Button" parent="GUI/OptionsMenu/VBoxContainer/QuitButtonHolder"]
@@ -506,7 +506,7 @@ offset_top = -95.0
 offset_right = 1109.0
 offset_bottom = 732.0
 scale = Vector2(1.7118, 1.57796)
-texture = ExtResource("15_otyub")
+texture = ExtResource("15_kk647")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="GUI/PauseMenu"]
 layout_mode = 0
@@ -531,7 +531,7 @@ offset_top = 540.99
 offset_right = 753.1
 offset_bottom = 541.035
 scale = Vector2(1.524, 1.55875)
-texture = ExtResource("16_p5jl6")
+texture = ExtResource("16_ll5m4")
 expand_mode = 1
 
 [node name="Button" type="Button" parent="GUI/PauseMenu/VBoxContainer/Unpausebuttonholder"]
@@ -574,7 +574,7 @@ offset_right = 813.9
 offset_bottom = 717.06
 rotation = 0.0721255
 scale = Vector2(1.49234, 1.52821)
-texture = ExtResource("8_wk20o")
+texture = ExtResource("14_6yos2")
 expand_mode = 1
 
 [node name="Button" type="Button" parent="GUI/PauseMenu/VBoxContainer/OptionsButtonHolder"]
@@ -632,7 +632,7 @@ offset_top = 0.0400009
 offset_right = 1061.0
 offset_bottom = 721.04
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("9_2l04y")
+texture = ExtResource("17_q32bf")
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="HUD/Bubble Girl UI"]
 layout_mode = 0
@@ -644,8 +644,8 @@ max_value = 1.0
 step = 0.02
 value = 1.0
 nine_patch_stretch = true
-texture_over = ExtResource("11_tlqck")
-texture_progress = ExtResource("10_dbs2x")
+texture_over = ExtResource("18_6i5js")
+texture_progress = ExtResource("19_3p785")
 
 [node name="Game" type="Control" parent="."]
 process_mode = 1
@@ -673,7 +673,7 @@ offset_bottom = 1981.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.55, 0.55)
-texture = ExtResource("20_07g66")
+texture = ExtResource("20_xahq0")
 
 [node name="BG main" type="TextureRect" parent="GameBackground"]
 z_index = -5
@@ -688,7 +688,7 @@ offset_bottom = 1441.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.55, 0.55)
-texture = ExtResource("20_8oasg")
+texture = ExtResource("21_7njh5")
 
 [node name="TextureRect3" type="TextureRect" parent="GameBackground"]
 z_index = 2
@@ -698,92 +698,92 @@ offset_bottom = 40.0
 [node name="Plant" type="Sprite2D" parent="GameBackground"]
 position = Vector2(395, 1300)
 rotation = -1.59845
-texture = ExtResource("22_8h65t")
+texture = ExtResource("22_03q10")
 
 [node name="Rock1" type="Sprite2D" parent="GameBackground"]
 position = Vector2(127, -764)
 rotation = 0.14561
-texture = ExtResource("23_dflep")
+texture = ExtResource("23_x2cf8")
 
 [node name="Rock2" type="Sprite2D" parent="GameBackground"]
 position = Vector2(1400, -560)
-texture = ExtResource("24_6wvtm")
+texture = ExtResource("24_uo4h4")
 
 [node name="Riasa1" type="Sprite2D" parent="GameBackground"]
 position = Vector2(-121, 755)
 rotation = 2.41766
 scale = Vector2(0.483573, 0.380233)
-texture = ExtResource("25_fafxd")
+texture = ExtResource("25_7k4ht")
 
 [node name="Riasa2" type="Sprite2D" parent="GameBackground"]
 position = Vector2(1873, 145)
 rotation = 0.308932
 scale = Vector2(0.680178, 0.761455)
-texture = ExtResource("26_0x7qm")
+texture = ExtResource("26_f23vq")
 
 [node name="Riasa3" type="Sprite2D" parent="GameBackground"]
 position = Vector2(878, -837)
 rotation = -0.935299
-texture = ExtResource("27_2qlu0")
+texture = ExtResource("27_8yvq5")
 
 [node name="Riasa4" type="Sprite2D" parent="GameBackground"]
 position = Vector2(1312, -143)
 rotation = -1.99358
 scale = Vector2(0.439024, -0.525774)
-texture = ExtResource("28_khlk2")
+texture = ExtResource("28_51odv")
 
 [node name="Plant2" type="Sprite2D" parent="GameBackground"]
 position = Vector2(696, 978)
 rotation = -2.65354
 scale = Vector2(0.466756, 0.561322)
-texture = ExtResource("22_8h65t")
+texture = ExtResource("22_03q10")
 
 [node name="Riasa5" type="Sprite2D" parent="GameBackground"]
 process_priority = -4
 position = Vector2(3490, 180)
 rotation = 0.474461
-texture = ExtResource("29_aexke")
+texture = ExtResource("29_soeof")
 
 [node name="Rock3" type="Sprite2D" parent="GameBackground"]
 position = Vector2(581, 1494)
 rotation = -3.13989
-texture = ExtResource("24_6wvtm")
+texture = ExtResource("24_uo4h4")
 
 [node name="Plant3" type="Sprite2D" parent="GameBackground"]
 position = Vector2(1256, 465)
 rotation = -0.410599
 scale = Vector2(0.263561, 0.332155)
-texture = ExtResource("22_8h65t")
+texture = ExtResource("22_03q10")
 
 [node name="Rock4" type="Sprite2D" parent="GameBackground"]
 position = Vector2(810, 349)
 rotation = 0.982382
 scale = Vector2(0.385086, 0.508519)
-texture = ExtResource("24_6wvtm")
+texture = ExtResource("24_uo4h4")
 
 [node name="Rock5" type="Sprite2D" parent="GameBackground"]
 position = Vector2(964, -61.9999)
 rotation = 1.47906
 scale = Vector2(0.670116, 0.641577)
-texture = ExtResource("23_dflep")
+texture = ExtResource("23_x2cf8")
 
 [node name="Rock6" type="Sprite2D" parent="GameBackground"]
 position = Vector2(314, 900)
 rotation = -0.436225
 scale = Vector2(0.49931, -0.578052)
-texture = ExtResource("23_dflep")
+texture = ExtResource("23_x2cf8")
 
 [node name="Riasa6" type="Sprite2D" parent="GameBackground"]
 position = Vector2(952, 828)
 rotation = 1.79961
 scale = Vector2(0.688288, 0.552998)
-texture = ExtResource("28_khlk2")
+texture = ExtResource("28_51odv")
 
 [node name="Plant4" type="Sprite2D" parent="GameBackground"]
 position = Vector2(472, 46)
 rotation = 1.99462
 scale = Vector2(0.20341, 0.231363)
-texture = ExtResource("22_8h65t")
+texture = ExtResource("22_03q10")
 
 [node name="BlurLayer" type="CanvasLayer" parent="."]
 layer = 0

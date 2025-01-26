@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cfrtdfivm3jv2"
-path="res://.godot/imported/urchin_boi.png-5550b55add2388759224026bb6be3269.ctex"
+uid="uid://dsqen81fbjvjq"
+path="res://.godot/imported/urchin boi 2.png-606e0ba9b02259fa7a129004f608f987.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/urchin_boi.png"
-dest_files=["res://.godot/imported/urchin_boi.png-5550b55add2388759224026bb6be3269.ctex"]
+source_file="res://Sprites/urchin boi 2.png"
+dest_files=["res://.godot/imported/urchin boi 2.png-606e0ba9b02259fa7a129004f608f987.ctex"]
 
 [params]
 
