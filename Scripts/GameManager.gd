@@ -5,7 +5,6 @@ enum GameState{
 }
 
 
-@export var level_count = 3
 
 @onready var hud = $HUD
 @onready var gui = $GUI
@@ -74,12 +73,14 @@ func next_level():
 		load_level(next_level_name)
 	else:
 		unload_level()
-		quit_game()
-		#load_menu(MenuType.MAIN)
+		#quit_game()
+		back_to_main_menu()
 
 func start_game():
 	current_state = GameState.GAME
-	load_level("level_2")
+	var level_name = "level_%s" % Global.level_counter 
+
+	load_level(level_name)
 	unpause_game()
 
 func pause_game() -> void:
@@ -143,4 +144,3 @@ func on_escape_pressed() -> void:
 		unpause_game()
 	elif current_state == GameState.GAME:
 		pause_game()
-	

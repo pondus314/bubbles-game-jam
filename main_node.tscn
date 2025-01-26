@@ -42,10 +42,9 @@ grow_vertical = 2
 script = ExtResource("1_gaacs")
 
 [node name="GUI" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="BackgroundArt" type="TextureRect" parent="GUI"]
-modulate = Color(0.456735, 0.930367, 0.7182, 1)
+modulate = Color(0.892617, 0, 0.385515, 1)
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -493,12 +492,14 @@ flat = true
 icon_alignment = 1
 
 [node name="PauseMenu" type="Control" parent="GUI"]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="TextureRect" type="TextureRect" parent="GUI/PauseMenu"]
+modulate = Color(1, 0.168627, 0.913725, 1)
 layout_mode = 0
 offset_left = -60.0
 offset_top = -95.0
@@ -646,9 +647,6 @@ nine_patch_stretch = true
 texture_over = ExtResource("11_tlqck")
 texture_progress = ExtResource("10_dbs2x")
 
-[node name="GameForeground" type="CanvasLayer" parent="."]
-layer = 0
-
 [node name="Game" type="Control" parent="."]
 process_mode = 1
 layout_mode = 1
@@ -660,7 +658,6 @@ grow_vertical = 2
 
 [node name="GameBackground" type="CanvasLayer" parent="."]
 layer = -1
-visible = false
 
 [node name="BG outline" type="TextureRect" parent="GameBackground"]
 z_index = 5
