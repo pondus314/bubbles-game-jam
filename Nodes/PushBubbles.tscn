@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://bgbimusmjex48"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hws1t"]
+size = Vector2(266.5, 65)
+
+[node name="PushBubbles" type="Area2D"]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(133.75, 0)
+shape = SubResource("RectangleShape2D_hws1t")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
