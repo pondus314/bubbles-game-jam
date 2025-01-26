@@ -17,25 +17,25 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yatq1"]
 size = Vector2(100, 18)
 
-[node name="Enemy" type="CharacterBody2D"]
+[node name="Enemy" type="CharacterBody2D" groups=["enemies"]]
 collision_layer = 4
 collision_mask = 3
 script = ExtResource("1_k7d7v")
 
-[node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="." groups=["enemies"]]
 position = Vector2(-5.66669, 2.56249)
 polygon = PackedVector2Array(-43, 35, 55, 35, 55, -18, 25, -36, -8, -36, -24, -25, -43, -1)
 
-[node name="TurtleProto" type="AnimatedSprite2D" parent="."]
+[node name="TurtleProto" type="AnimatedSprite2D" parent="." groups=["enemies"]]
 position = Vector2(4.33332, -15.4375)
 scale = Vector2(0.173264, 0.173264)
 sprite_frames = SubResource("SpriteFrames_sxwyr")
 
-[node name="TurningCollider" type="Area2D" parent="."]
+[node name="TurningCollider" type="Area2D" parent="." groups=["enemies"]]
 position = Vector2(-5.66669, 2.56249)
 collision_layer = 0
 collision_mask = 9
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TurningCollider"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TurningCollider" groups=["enemies"]]
 position = Vector2(5.66669, 25.4375)
 shape = SubResource("RectangleShape2D_yatq1")

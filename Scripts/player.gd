@@ -33,7 +33,7 @@ var deflation_queued = false
 
 func _ready() -> void:
 	Global.player = self
-	self.collider.body_entered.connect(func(_body): on_death(""))
+	self.collider.body_entered.connect(func(body): collision_detected(body))
 	float_left = max_float_time*(1-extra_weight)
 
 func _physics_process(delta: float) -> void:
@@ -150,3 +150,11 @@ func _on_main_sprite_animation_finished():
 	else:
 		main_sprite.play("idle")
 	
+func collision_detected(body: Node2D):
+	if body.is_in_group("enemies"):
+		on_death("")
+	elif body.is_in_group("urchin_boy"):
+		if extra_weight > 0.9: 
+			Global.main_scene.finish_level()
+		else:
+			on_death("")

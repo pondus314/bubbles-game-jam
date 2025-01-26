@@ -8,7 +8,7 @@
 [node name="Node2D2" type="Node2D"]
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("1_2l6s5")]
-position = Vector2(10892, -206)
+position = Vector2(244, -290)
 max_float_time = 0.5
 heavy_movement_accel = 600
 heavy_max_speed = 900.0
@@ -57,6 +57,6 @@ position = Vector2(6004, 1148)
 position = Vector2(3244, 589)
 
 [node name="CloudPickup" parent="TileMap" instance=ExtResource("4_vhj6i")]
-position = Vector2(11062, 89)
+position = Vector2(11077, 102)
 
 [editable path="TileMap"]
