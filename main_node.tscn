@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://5e0xeagrb3nc"]
+[gd_scene load_steps=23 format=3 uid="uid://5e0xeagrb3nc"]
 
 [ext_resource type="Script" path="res://Scripts/GameManager.gd" id="1_gaacs"]
 [ext_resource type="Texture2D" uid="uid://cyt52w0odrtti" path="res://themes/Menu_Back.png" id="1_x1uuu"]
@@ -19,6 +19,8 @@
 [ext_resource type="Texture2D" uid="uid://cfykbl5fu8pag" path="res://themes/Options_Music_Off.png" id="13_evq52"]
 [ext_resource type="Texture2D" uid="uid://dke1xeuce5utm" path="res://themes/Pause_screen.png" id="15_otyub"]
 [ext_resource type="Texture2D" uid="uid://dqqf47d7r78vo" path="res://themes/Unpause_button.png" id="16_p5jl6"]
+[ext_resource type="Texture2D" uid="uid://cgfmmcc18ptkj" path="res://Sprites/Outline_purple.PNG" id="20_07g66"]
+[ext_resource type="Texture2D" uid="uid://b4acgnrdhikx5" path="res://Sprites/Background_purple.PNG" id="20_8oasg"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_s2uu7"]
 
@@ -32,6 +34,7 @@ grow_vertical = 2
 script = ExtResource("1_gaacs")
 
 [node name="GUI" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="BackgroundArt" type="TextureRect" parent="GUI"]
 modulate = Color(0.456735, 0.930367, 0.7182, 1)
@@ -635,6 +638,9 @@ nine_patch_stretch = true
 texture_over = ExtResource("11_tlqck")
 texture_progress = ExtResource("10_dbs2x")
 
+[node name="GameForeground" type="CanvasLayer" parent="."]
+layer = 0
+
 [node name="Game" type="Control" parent="."]
 process_mode = 1
 layout_mode = 1
@@ -643,6 +649,40 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="GameBackground" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="TextureRect2" type="TextureRect" parent="GameBackground"]
+z_index = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -965.0
+offset_top = -1219.0
+offset_right = 2535.0
+offset_bottom = 1981.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("20_07g66")
+
+[node name="TextureRect" type="TextureRect" parent="GameBackground"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -965.0
+offset_top = -1219.0
+offset_right = 2535.0
+offset_bottom = 1981.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.55, 0.55)
+texture = ExtResource("20_8oasg")
 
 [node name="BlurLayer" type="CanvasLayer" parent="."]
 layer = 0
