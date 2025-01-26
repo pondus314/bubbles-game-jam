@@ -1,11 +1,17 @@
-[gd_scene load_steps=9 format=3 uid="uid://dtdi627eoi6ig"]
+[gd_scene load_steps=15 format=3 uid="uid://dtdi627eoi6ig"]
 
 [ext_resource type="Script" path="res://Scripts/player.gd" id="1_e0fsx"]
+[ext_resource type="Texture2D" uid="uid://lvfyuixfefqc" path="res://Sprites/Player/Inflating/inflating0000.png" id="2_2ot7l"]
 [ext_resource type="Texture2D" uid="uid://dovejy8fibfs4" path="res://Sprites/Player/idle/idle0.png" id="2_c0w2k"]
+[ext_resource type="Texture2D" uid="uid://bvbothvgxkh3r" path="res://Sprites/Player/Inflating/inflating0002.png" id="3_kkwok"]
 [ext_resource type="Texture2D" uid="uid://dgkje8ibgjr14" path="res://Sprites/Player/idle/idle1.png" id="3_l3bm6"]
+[ext_resource type="Texture2D" uid="uid://b3c1wqls5vbig" path="res://Sprites/Player/Inflating/inflating0004.png" id="4_ici7w"]
 [ext_resource type="Texture2D" uid="uid://cb06l7stajmn" path="res://Sprites/Player/idle/idle2.png" id="4_ji608"]
 [ext_resource type="Texture2D" uid="uid://dnwgwms3bqhxs" path="res://Sprites/Player/idle/idle3.png" id="5_rkj53"]
+[ext_resource type="Texture2D" uid="uid://dl6t2o5cv5obt" path="res://Sprites/Player/Inflating/inflating0006.png" id="5_yme3y"]
 [ext_resource type="Texture2D" uid="uid://b5ojj6u56xkmn" path="res://Sprites/Player/idle/idle4.png" id="6_ea6or"]
+[ext_resource type="Texture2D" uid="uid://cxp6dgsry2kx5" path="res://Sprites/Player/Inflating/inflating0008.png" id="6_px3im"]
+[ext_resource type="Texture2D" uid="uid://fpn8ars0ano8" path="res://Sprites/Player/Inflating/inflating0010.png" id="7_c3wqt"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_d4ino"]
 animations = [{
@@ -28,6 +34,40 @@ animations = [{
 "loop": true,
 "name": &"idle",
 "speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_2ot7l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_kkwok")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ici7w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_yme3y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_px3im")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_c3wqt")
+}],
+"loop": false,
+"name": &"inflating",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_px3im")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_c3wqt")
+}],
+"loop": true,
+"name": &"looping",
+"speed": 5.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_q0mpi"]
@@ -43,7 +83,6 @@ scale = Vector2(0.187, 0.2)
 sprite_frames = SubResource("SpriteFrames_d4ino")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.220835
 
 [node name="MovementHitbox" type="CollisionShape2D" parent="."]
 position = Vector2(0, 9)
@@ -58,3 +97,5 @@ collision_mask = 20
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Collider"]
 shape = SubResource("CapsuleShape2D_q0mpi")
+
+[connection signal="animation_finished" from="MainSprite" to="." method="_on_main_sprite_animation_finished"]
