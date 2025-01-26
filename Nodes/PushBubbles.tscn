@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://bgbimusmjex48"]
+[gd_scene load_steps=7 format=3 uid="uid://bgbimusmjex48"]
 
 [ext_resource type="Texture2D" uid="uid://cph636741ewk2" path="res://Sprites/items_spritesheet.png" id="1_a1mki"]
 [ext_resource type="Texture2D" uid="uid://iycjc2mqg8c8" path="res://Sprites/bubble_small.PNG" id="1_s4lrg"]
+[ext_resource type="AudioStream" uid="uid://4lh3e82nigy" path="res://sounds/7317__schademans__bubbles2_bussy.wav" id="3_djv5w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hws1t"]
 size = Vector2(170.25, 334.5)
@@ -73,3 +74,10 @@ sprite_frames = SubResource("SpriteFrames_d6mpf")
 [node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="Node2D" groups=["bubbles"]]
 position = Vector2(52, -133)
 sprite_frames = SubResource("SpriteFrames_d6mpf")
+
+[node name="bubbling" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_djv5w")
+volume_db = -16.865
+max_distance = 494.0
+attenuation = 1.8025
+panning_strength = 0.85
