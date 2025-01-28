@@ -69,7 +69,7 @@ func next_level():
 	Global.level_counter += 1
 	var next_level_name = "level_%s" % Global.level_counter 
 
-	if Global.level_counter < Global.NUMBER_OF_LEVELS:
+	if Global.level_counter <= Global.NUMBER_OF_LEVELS:
 		load_level(next_level_name)
 	else:
 		unload_level()
